@@ -7,56 +7,52 @@ const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie, restoreUser } = require('../../utils/auth');
 const { User } = require('../../db/models');
 
-
-//validations for signup route that expec the body of the request to have a key of username, email,
-//and password with the password of the user being created
-const validateSignup = [
-  check('email')
+const validateLogin = [
+  check('credential')
     .exists({ checkFalsy: true })
-    .isEmail()
-    .withMessage('Please provide a valid email.'),
-  check('firstName')
-    .exists({checkFalsy: true})
-    .withMessage('Please provide your First Name.'),
-  check('firstName')
-    .not()
-    .isEmail()
-    .withMessage('First Name cannot be an email.'),
-  check('lastName')
-    .exists({checkFalsy: true})
-    .withMessage('Please provide your Last Name.'),
-  check('username')
-    .exists({ checkFalsy: true })
-    .isLength({ min: 4 })
-    .withMessage('Please provide a username with at least 4 characters.'),
-  check('username')
-    .not()
-    .isEmail()
-    .withMessage('Username cannot be an email.'),
+    .notEmpty()
+    .withMessage('Please provide a valid email or username.'),
   check('password')
     .exists({ checkFalsy: true })
-    .isLength({ min: 6 })
-    .withMessage('Password must be 6 characters or more.'),
+    .withMessage('Please provide a password.'),
   handleValidationErrors,
 ];
 
-//user sign-up
+// Log in
 router.post(
-    '/',
-    validateSignup,
-    asyncHandler(async (req, res) => {
-      const { email, password, firstName, lastName, username } = req.body;
-      const user = await User.signup({ email, firstName, lastName, username, password });
+  '/',
+  validateLogin,
+  asyncHandler(async (req, res, next) => {
+    const { credential, password } = req.body;
 
-      await setTokenCookie(res, user);
+    const user = await User.login({ credential, password });
 
-      return res.json({
-        user,
-      });
-    }),
+    if (!user) {
+      const err = new Error('Login failed');
+      err.status = 401;
+      err.title = 'Login failed';
+      err.errors = ['The provided credentials were invalid.'];
+      return next(err);
+    }
+
+    await setTokenCookie(res, user);
+
+    return res.json({
+      user,
+    });
+  }),
 );
 
+// Log out
+router.delete(
+  '/',
+  (_req, res) => {
+    res.clearCookie('token');
+    return res.json({ message: 'success' });
+  }
+);
 
+// Restore session user
 router.get(
   '/',
   restoreUser,
