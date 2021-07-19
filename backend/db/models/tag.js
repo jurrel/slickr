@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'tagId'
     }
 
-    Tag.belongsToMany(models.Post, columnMapping);
+    Tag.belongsToMany(models.Photo, columnMapping);
   };
   return Tag;
 };
