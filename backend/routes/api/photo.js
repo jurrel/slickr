@@ -7,6 +7,7 @@ const { Photo } = require('../../db/models');
 //photo should grab all photos  yet nothing is happening
 router.get('/', asyncHandler(async (req, res, next) => {
     const photos = await Photo.findAll();
+    console.log(photos)
     return res.json(photos);
 }));
 
