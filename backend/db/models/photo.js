@@ -22,10 +22,11 @@ module.exports = (sequelize, DataTypes) => {
     const columnMapping = {
       through: 'ManyTag',
       otherKey: 'tagId',
-      foreignKey: 'photoId'
+      foreignKey: 'userId'
     }
 
     Photo.belongsToMany(models.Tag, columnMapping);
+    // Photo.hasMany(models.ManyTag, { foreignKey: 'tagId' });
     Photo.hasMany(models.Comment, { foreignKey: 'photoId' })
     // Photo.hasMany(models.Tag, { foreignKey: 'photoId' })
     Photo.belongsTo(models.User, { foreignKey: 'userId' })
