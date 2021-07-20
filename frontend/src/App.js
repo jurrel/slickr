@@ -19,14 +19,18 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          
+          <Route exact path="/explore"> {/*Cannot change to '/' b/c it breaks*/}
+            <HomePage />
+          </Route>
           <Route path="/login">
             <LoginFormPage />
           </Route>
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/explore">
-            <HomePage />
+          <Route>
+          <h1>Page Not Found</h1>
           </Route>
         </Switch>
       )}
