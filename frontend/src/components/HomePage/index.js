@@ -13,9 +13,9 @@ function HomePage() {
 
     //Object.values converts objects into arrays
     const photos = useSelector((state) => Object.values(state.photo));
-    
+
     return (
-        <div >
+        <div className="singlePhotos">
             {photos?.map((photo) => (
                 <>
                     <img className="singlePhoto" src={photo.imageUrl} />

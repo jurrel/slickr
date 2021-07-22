@@ -1,4 +1,7 @@
-.singlePhoto {
-    background-repeat: no-repeat; 
-    background-size: 50% 50%;
+img {
+    float: left;
+    width:  100px;
+    height: 100px;
+    object-fit: cover;
+    padding: 2px;
 }
