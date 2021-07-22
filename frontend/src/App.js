@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import HomePage from "./components/HomePage"
+import PhotoPage from "./components/PhotoPage"
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="/photos/:photoId">
+            <PhotoPage />
           </Route>
           <Route>
           <h1>Page Not Found</h1>

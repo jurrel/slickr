@@ -27,15 +27,16 @@ function Navigation({ isLoaded }) {
   }
 
   return (
-    <ul>
-      <div className='explore-icon'>
-        {/* The Explore button is the "HOME" */}
-        <NavLink exact to="/">Slickr</NavLink>
-         {/* <img src={logo} alt="img" />    not exactly what I had in mind, come back to it later */}
-
+    <nav className="navbar-container">
+      <div className="logo">
+        <NavLink exact to="/">
+          <div className="slickr"></div>
+        </NavLink>
+      </div>
+      <div>
         {isLoaded && sessionLinks}
       </div>
-    </ul>
+    </nav>
   );
 }
 
