@@ -11,9 +11,8 @@ function PhotoPage() {
     const dispatch = useDispatch();
     const { photoId } = useParams();
     const photo = useSelector(state => state.photo);
-    console.log("THIS IS WHAT PHOTO PRINTS", photo)
     
-   //reloads page everytime photoId changes
+    //reloads page everytime photoId changes
     useEffect(() => {
         dispatch(getPhoto(photoId));
     }, [dispatch, photoId]);
@@ -21,10 +20,16 @@ function PhotoPage() {
 
     return (
         <>
-            {/* <div>hiiiiiii</div> */}
-            <img src={photo.imageUrl} />
+            <img src={photo[photoId]?.imageUrl} alt="picture" />
         </>
     );
 };
 
 export default PhotoPage;
+
+
+
+
+
+
+

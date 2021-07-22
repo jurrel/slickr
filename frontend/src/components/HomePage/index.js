@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPhotos } from '../../store/photo';
 import './HomePage.css';
@@ -19,7 +19,7 @@ function HomePage() {
         <div>
             {photos?.map((photo) => (
                 <>
-                    <img src={photo.imageUrl} />
+                    <img src={photo.imageUrl} alt="photo"/>
                 </>
             ))}
         </div>
@@ -27,6 +27,11 @@ function HomePage() {
 }
 
 export default HomePage;
+
+
+
+
+
 
 
 
