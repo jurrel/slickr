@@ -20,7 +20,7 @@ function App() {
       {isLoaded && (
         <Switch>
           
-          <Route exact path="/explore"> {/*Cannot change to '/' b/c it breaks*/}
+          <Route exact path="/"> {/*Cannot change to '/' b/c it breaks*/}
             <HomePage />
           </Route>
           <Route path="/login">
