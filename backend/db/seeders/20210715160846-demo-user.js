@@ -9,8 +9,8 @@ module.exports = {
         email: "demo@user.io",
         firstName: "Demo",
         lastName: "User",
-        username: "Demo",
-        hashedPassword: "$2a$12$zNP2KmQ.5/8s0suxzqFZkOYnR/S1NrLxkpPnqQsEaerau/gX3pPES",
+        username: "demo",
+        hashedPassword: "$2a$12$9UtTcvCcPCNcekKFFheg8.5xjcckbREq6oewJQA86weXcWLn7Mn/G",
       },
       {
         email: "Totsugeki@guiltygear.com",
