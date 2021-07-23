@@ -10,7 +10,6 @@ function HomePage() {
     
     const showPhoto = (e) => {
         history.push(`/photos/${photo.id}`)
-        //e.preventDefault()
     }
 
     //grabs photos 1 time
