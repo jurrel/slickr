@@ -1,3 +1,5 @@
+import { csrfFetch } from "./csrf";
+
 const LOAD_ALL = 'photo/LOAD';
 const LOAD_ONE = 'photo/LOADONE';
 const DELETE = 'photo/DELETE';
@@ -38,7 +40,7 @@ export const getPhotos = () => async dispatch => {
 
 //Getting 1 photo
 export const getPhoto = (photoId) => async dispatch => {
-    const response = await fetch(`/api/photos/${photoId}`);
+    const response = await csrfFetch(`/api/photos/${photoId}`);
 
     if (response.ok) {
         const photo = await response.json();
@@ -46,9 +48,25 @@ export const getPhoto = (photoId) => async dispatch => {
     }
 };
 
+//Upload a photo 
+export const uploadPhoto = (photo) => async (dispatch) => {
+  const response = await csrfFetch('/api/photos', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(photo),
+  });
+  const newUploadPhoto = await response.json();
+
+  if (response.ok) {
+    dispatch(upload(newUploadPhoto))
+  }
+  return newUploadPhoto;
+};
+
+
 //Deleting a specific photo
 export const deleteOnePhoto = (photoId) => async dispatch => {
-    const response = await fetch(`/api/photos/${photoId}/delete`, {
+    const response = await csrfFetch(`/api/photos/${photoId}/delete`, {
         method: "DELETE"
     });
 
@@ -56,23 +74,6 @@ export const deleteOnePhoto = (photoId) => async dispatch => {
         dispatch(deleteOne(photoId));
     }
 };
-//////////////////////////////////////////////////////////////////////////////////////
-//Upload a photo 
-export const uploadPhoto = (photoData) => async dispatch => {
-    const response = await fetch(`/api/photos`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(photoData)
-    });
-    if (response.ok) {
-        const upload = await response.json();
-        dispatch(upload(upload))
-        return upload
-    }
-}
-//////////////////////////////////////////////////////////////////////////
 const initialState = {}
 
 //Reducer
