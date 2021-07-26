@@ -6,7 +6,6 @@ import SignupFormPage from "./components/SignupFormPage";
 import HomePage from "./components/HomePage"
 import PhotoPage from "./components/PhotoPage"
 import UploadPage from "./components/UploadPage";
-import CommentPage from "./components/CommentPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -38,9 +37,6 @@ function App() {
           </Route>
           <Route path="/upload">
             <UploadPage />
-          </Route>
-          <Route path="/comment">
-            <CommentPage />
           </Route>
           <Route>
             <h1>Page Not Found</h1>
