@@ -29,7 +29,7 @@ export const upload = photo => ({
 
 //Getting all photos
 export const getPhotos = () => async dispatch => {
-    const response = await fetch('/api/photos');
+    const response = await csrfFetch('/api/photos');
 
     if (response.ok) {
         const photos = await response.json();
@@ -90,7 +90,7 @@ const photoReducer = (state = initialState, action) => {
             };
         }
         case LOAD_ONE: {
-            const onePhoto = { ...state };
+            const onePhoto = { ...state }; 
             onePhoto[action.photo.id] = action.photo;
             return onePhoto
         }

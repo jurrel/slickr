@@ -12,14 +12,14 @@ function HomePage() {
         history.push(`/photos/${photo.id}`)
     }
 
-    //grabs photos 1 time
+    //grabs photos 1 time updates state in our store
     useEffect(() => {
         dispatch(getPhotos());
     }, [dispatch]);
 
     //Object.values converts objects into arrays
-    const photos = useSelector((state) => Object.values(state.photo));
-    const photo = useSelector((state) => state.photo);
+    const photos = useSelector((state) => Object.values(state.photo)); //grabs state from photoReducer
+    const photo = useSelector((state) => state.photo); 
 
 
     return (

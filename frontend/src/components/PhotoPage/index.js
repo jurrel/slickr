@@ -18,7 +18,7 @@ function PhotoPage() {
     useEffect(() => {
         dispatch(getPhoto(photoId));
     }, [dispatch, photoId]);
-
+    
     //Deleting photo 
     const deleteHelperFunction = (e) => {
         e.preventDefault();
@@ -30,6 +30,7 @@ function PhotoPage() {
     return (
         <>
             <img src={photo[photoId]?.imageUrl} alt="picture" />
+            <div>{photo[photoId]?.caption}</div>
             <div>
                 <button type="submit">Edit</button>
                 <button type="submit">Comment</button>
