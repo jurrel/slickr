@@ -13,6 +13,10 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: 'Users' }
       },
+      title: {
+        allowNull: true,
+        type: Sequelize.TEXT
+      },
       caption: {
         allowNull: true,
         type: Sequelize.TEXT
