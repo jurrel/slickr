@@ -18,6 +18,13 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          userId: 5,
+          photoId: 5,
+          comment: "Poke!",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {});
   },

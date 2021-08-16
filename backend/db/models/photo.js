@@ -2,9 +2,10 @@
 module.exports = (sequelize, DataTypes) => {
   const Photo = sequelize.define('Photo', {
     userId: DataTypes.INTEGER,
-    caption:DataTypes.TEXT, 
+    caption: DataTypes.TEXT,
     albumId: DataTypes.INTEGER,
-    imageUrl: DataTypes.STRING
+    imageUrl: DataTypes.STRING,
+    title: DataTypes.STRING,
   }, {});
   Photo.associate = function (models) {
     // associations can be defined here

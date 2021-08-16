@@ -18,14 +18,21 @@ router.get('/:id', asyncHandler(async (req, res) => {
     return res.json(photo)
 }));
 
-// Edit photo
-router.get('/:id/edit', requireAuth, async (req, res) => {
+// Edit photo 
+// router.get('/:id', requireAuth, async (req, res) => {
+//     const photoId = parseInt(req.params.id, 10);
+//     const photoEdit = await Photo.findByPk(photoId);
+
+//     return res.json(photoEdit);
+// });
+router.get('/:id(//d+)/edit', requireAuth, async (req, res) => {
     const photoId = parseInt(req.params.id, 10);
-    const photoEdit = await Photo.findByPk(photoId);
+    const photoEdit = await Photo.findByPk(photoId, {
+        include: User
+    });
 
     return res.json(photoEdit);
 });
-
 
 
 //Delete photo
@@ -35,12 +42,11 @@ router.delete('/:id/delete', requireAuth, async (req, res) => {
 
     await deletePhoto.destroy()
 
-
     res.status(204).end()
 });
 
 
-//Upload photo
+//Upload/Add photo
 router.post('/', requireAuth, asyncHandler(async (req, res) => {
     const { userId, imageUrl, caption, albumId } = req.body
     const pictureUpload = await Photo.create({
