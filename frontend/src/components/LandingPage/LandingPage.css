@@ -1,0 +1,41 @@
+
+.landing-img{
+  background-size: cover;
+  top:25%;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1; /*Makes sure photos are below the navBar*/
+  top:0px;
+}
+
+
+
+.landing-page-header {
+  text-align: center;
+  margin-top: 450px ;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 40px;
+  font-weight: 900;
+} 
+
+.start-adventure-button {
+  font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+  height: 64px;
+  line-height: 64px;
+  font-size:24px;
+  font-weight: 800;
+  text-decoration: none;
+  text-align: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.start-adventure {
+  text-decoration: none;
+  color: black;
+  font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+  font-weight: 700;
+}

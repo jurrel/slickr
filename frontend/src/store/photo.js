@@ -1,12 +1,14 @@
 import { csrfFetch } from "./csrf";
 
+
 const LOAD_ALL = 'photo/LOAD';
 const LOAD_ONE = 'photo/LOADONE';
 const DELETE = 'photo/DELETE';
 const UPLOAD = 'photos/UPLOAD';
+const EDIT = 'photos/EDIT';
 
 //action creator  => used to update the reducer
-export const load = photos => ({
+export const loadAllPhotos = photos => ({
     type: LOAD_ALL,
     photos
 });
@@ -21,9 +23,14 @@ export const deleteOne = photo => ({
     photo
 });
 
-export const upload = photo => ({
+export const upload = photo => ({ 
     type: UPLOAD,
     photo
+});
+
+export const edit = photo => ({
+    type: EDIT,
+    photo,
 });
 
 
@@ -33,7 +40,7 @@ export const getPhotos = () => async dispatch => {
 
     if (response.ok) {
         const photos = await response.json();
-        dispatch(load(photos))
+        dispatch(loadAllPhotos(photos))
         return photos
     }
 }
@@ -50,17 +57,17 @@ export const getPhoto = (photoId) => async dispatch => {
 
 //Upload a photo 
 export const uploadPhoto = (photo) => async (dispatch) => {
-  const response = await csrfFetch('/api/photos', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(photo),
-  });
-  const newUploadPhoto = await response.json();
+    const response = await csrfFetch('/api/photos', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(photo),
+    });
+    const newUploadPhoto = await response.json();
 
-  if (response.ok) {
-    dispatch(upload(newUploadPhoto))
-  }
-  return newUploadPhoto;
+    if (response.ok) {
+        dispatch(upload(newUploadPhoto))
+    }
+    return newUploadPhoto;
 };
 
 
@@ -72,6 +79,21 @@ export const deleteOnePhoto = (photoId) => async dispatch => {
 
     if (response.ok) {
         dispatch(deleteOne(photoId));
+    }
+};
+
+//Edit photo
+export const editPhoto = (payload) => async dispatch => {
+    const response = await csrfFetch(`/api/photos/${payload.photoId}`, {
+        method: "PUT",
+        headers: { 'Content-Type': "application/json" },
+        body: JSON.stringify(payload)
+    });
+
+    if (response.ok) {
+        const updateCaption = await response.json();
+        dispatch(edit(updateCaption));
+        return updateCaption
     }
 };
 const initialState = {}
@@ -90,7 +112,7 @@ const photoReducer = (state = initialState, action) => {
             };
         }
         case LOAD_ONE: {
-            const onePhoto = { ...state }; 
+            const onePhoto = { ...state };
             onePhoto[action.photo.id] = action.photo;
             return onePhoto
         }
@@ -99,6 +121,11 @@ const photoReducer = (state = initialState, action) => {
             delete photo[action.photo]
             return photo
         }
+        case EDIT: {
+            const edit = {...state};
+            edit[action.photo.id] = action.photo;
+            return edit
+          }
         default:
             return state;
     }

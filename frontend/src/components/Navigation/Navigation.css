@@ -1,20 +1,42 @@
-.nav-container {
+/* .nav-container {
     display: flex;
     justify-content: space-between;
-}
-.slickr {
+} */
+/* .slickr {
     background-image: url("../../assets/Slickr.png");
     background-size: 50px;
     background-repeat: no-repeat;
-    border-radius: 70%;
     width: 50px;
     height: 50px;
     margin-right: 0.5em;
-    margin-top: 5px;
-}
+    margin-top: 50px;
+} */
 
-.navbar-button {
+/* .navbar-button {
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+} */
+
+.navbar-button {
+    /* take away underline */
+    text-decoration: none;
+    color: black;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    font-weight: 700;
 }
+
+.navbar-container {
+    background-color: #0b0b0c2a;
+    color: #212124;
+    position: -webkit-sticky;
+    position: sticky;
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    align-items: center;
+    /* position: fixed; */
+    width:100%;
+    z-index: 2000;
+}
+

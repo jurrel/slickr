@@ -8,6 +8,8 @@ import PhotoPage from "./components/PhotoPage"
 import UploadPage from "./components/UploadPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import { LandingPage } from "./components/LandingPage";
+import EditImage from "./components/EditPhoto";
 
 
 function App() {
@@ -23,8 +25,8 @@ function App() {
       {isLoaded && (
         <Switch>
 
-          <Route exact path="/"> {/*Cannot change to '/' b/c it breaks*/}
-            <HomePage />
+          <Route exact path="/">
+            <LandingPage />
           </Route>
           <Route path="/login">
             <LoginFormPage />
@@ -37,6 +39,12 @@ function App() {
           </Route>
           <Route path="/upload">
             <UploadPage />
+          </Route>
+          <Route path="/homepage">
+            <HomePage />
+          </Route>
+          <Route path="/photos/:photoId/edit">
+            <EditImage />
           </Route>
           <Route>
             <h1>Page Not Found</h1>

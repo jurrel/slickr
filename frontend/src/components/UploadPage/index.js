@@ -10,21 +10,24 @@ const UploadPage = () => {
     const history = useHistory();
     const [imageUrl, setImageUrl] = useState('');
     const [caption, setCaption] = useState('');
+    const [title, setTitle] = useState('');  ////////////////
 
-    const updateImageUrl = (e) => setImageUrl(e.target.value)
-    const updateCaption = (e) => setCaption(e.target.value)
+    const createNewImageUrl = (e) => setImageUrl(e.target.value)
+    const createNewCaption = (e) => setCaption(e.target.value)
+    const createNewTitle = (e) => setTitle(e.target.value)
 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const addPhoto = {
+        const payload = {
             imageUrl,
             caption,
+            title, ////////////////
             userId: sessionUser.id
         };
 
-        let createPhoto = await dispatch(uploadPhoto(addPhoto))
+        let createPhoto = await dispatch(uploadPhoto(payload))
         if (createPhoto) {
             history.push(`/photos/${createPhoto.id}`)
         }
@@ -33,7 +36,8 @@ const UploadPage = () => {
 
     const handleCancelClick = (e) => {
         e.preventDefault();
-    };
+        history.push('/homepage')
+    }; 
 
 
     return (
@@ -43,12 +47,17 @@ const UploadPage = () => {
                     type="text"
                     placeholder="Image URL"
                     value={imageUrl}
-                    onChange={updateImageUrl} />
+                    onChange={createNewImageUrl} />
+                <input
+                    type="text"
+                    placeholder="title"
+                    value={title}
+                    onChange={createNewTitle} />
                 <input
                     type="text"
                     placeholder="Caption"
                     value={caption}
-                    onChange={updateCaption} />
+                    onChange={createNewCaption} />
                 <button type="submit">Submit</button>
                 <button type="button" onClick={handleCancelClick}>Cancel</button>
             </form>

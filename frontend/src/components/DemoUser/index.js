@@ -16,9 +16,8 @@ function DemoUser() {
             password: 'password',
         };
 
-    
         await dispatch(login(DemoUser))
-        history.push("/");  //after demo user button is click it automatically goes to home page
+        history.push("/homepage");  //after demo user button is click it automatically goes to home page
     }
 
     return(
