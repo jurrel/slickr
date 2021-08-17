@@ -1,13 +1,13 @@
 import React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPhoto } from '../../store/photo';
+import { edit, getPhoto } from '../../store/photo';
 import { useParams, useHistory, Redirect } from "react-router-dom";
 import { deleteOnePhoto, editPhoto } from "../../store/photo";
 import Comments from '../Comments/';
-
-
+import EditImage from '../EditImage/';
 import "./PhotoPage.css"
+
 
 function PhotoPage() {
     const dispatch = useDispatch();
@@ -16,6 +16,7 @@ function PhotoPage() {
     const photo = useSelector(state => state.photo);
     const sessionUser = useSelector(state => state.session.user);
 
+    const [editImage, setEditImage] = useState(false)
     console.log('THIS IS PHOTO', photo)
     console.log('THIS IS SESSION USER', sessionUser)
     console.log('THIS IS PHOTOID photopage', photoId)
@@ -42,9 +43,10 @@ function PhotoPage() {
 
     // // Lets original user update their photo DOESNT WORK
     const updateHelperFunction = (e) => { //////////////////////////////////
-        e.preventDefault();
-        dispatch(editPhoto({ title, caption, photoId }));
-        history.push(`/photos/${photoId}`);
+        // e.preventDefault();
+        // dispatch(editPhoto({ title, caption, photoId }));
+        // history.push(`/photos/${photoId}`);
+        setEditImage(!editImage)
     } //////////////////////////////////////////////////////////
 
 
@@ -53,7 +55,7 @@ function PhotoPage() {
             <img src={photo[photoId]?.imageUrl} alt="picture" />
             <div>{photo[photoId]?.title} </div>
             <div>{photo[photoId]?.caption} </div>
-            <div>{photo[photoId]?.username}</div> {/*Poster's username is not displaying*/}
+            <div>{photo[photoId]?.username}</div> {/*Poster's username is not displaying Need a way to convert user id to username*/}
 
 
             {photo[photoId]?.userId === sessionUser.id ?
@@ -63,7 +65,7 @@ function PhotoPage() {
                 <button onClick={updateHelperFunction}>Edit Photo</button> : <></>
             }
             <Comments />
-            
+            {editImage && <EditImage setEditImage={setEditImage} /> } {/*So if edit image is true show edit image buttons*/}
         </>
     );
 };

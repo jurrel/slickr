@@ -23,7 +23,7 @@ export const deleteOne = photo => ({
     photo
 });
 
-export const upload = photo => ({ 
+export const upload = photo => ({
     type: UPLOAD,
     photo
 });
@@ -76,7 +76,7 @@ export const deleteOnePhoto = (photoId) => async dispatch => {
     const response = await csrfFetch(`/api/photos/${photoId}/delete`, {
         method: "DELETE"
     });
-
+    console.log('DELETE')
     if (response.ok) {
         dispatch(deleteOne(photoId));
     }
@@ -85,6 +85,7 @@ export const deleteOnePhoto = (photoId) => async dispatch => {
 //Edit photo
 // trying to see if i can edit on same page
 export const editPhoto = (payload) => async dispatch => {
+    console.log('WHAT IS PAYLOAD', payload)
     const response = await csrfFetch(`/api/photos/${payload.photoId}`, {
         method: "PUT",
         headers: { 'Content-Type': "application/json" },
@@ -138,10 +139,10 @@ const photoReducer = (state = initialState, action) => {
             return photo
         }
         case EDIT: {
-            const edit = {...state};
+            const edit = { ...state };
             edit[action.photo.id] = action.photo;
             return edit
-          }
+        }
         default:
             return state;
     }
