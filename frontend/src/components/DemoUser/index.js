@@ -2,6 +2,7 @@ import React from 'react';
 import { login } from "../../store/session";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import './DemoUser.css';
 
 function DemoUser() {
 
@@ -21,9 +22,9 @@ function DemoUser() {
     }
 
     return(
-        <div>
+        <div >
             <form onSubmit={ handleClick }>
-                <button type='submit'> Demo User </button>
+                <button className='login'type='submit'> Demo User </button>
             </form>
         </div>
     )

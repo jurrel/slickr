@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { editPhoto } from '../../store/photo';
 import { useHistory, useParams } from "react-router-dom";

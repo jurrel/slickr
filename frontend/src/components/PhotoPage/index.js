@@ -42,7 +42,7 @@ function PhotoPage() {
     // // Lets original user update their photo DOESNT WORK
     const updateHelperFunction = (e) => { //////////////////////////////////
         e.preventDefault();
-        dispatch(editPhoto({ title, caption }));
+        dispatch(editPhoto({ title, caption, photoId }));
         history.push(`/photos/${photoId}`);
     } //////////////////////////////////////////////////////////
 

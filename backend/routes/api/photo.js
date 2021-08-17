@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const asyncHandler = require('express-async-handler');
-const { Photo } = require('../../db/models');
+const { Photo, User } = require('../../db/models');
 const { requireAuth } = require('../../utils/auth')
 
 // Get all the photos
@@ -19,13 +19,15 @@ router.get('/:id', asyncHandler(async (req, res) => {
 }));
 
 // Edit photo 
-// router.get('/:id', requireAuth, async (req, res) => {
+// router.put('/:id(\\d+)', requireAuth, async (req, res) => {
 //     const photoId = parseInt(req.params.id, 10);
-//     const photoEdit = await Photo.findByPk(photoId);
+//     const photoEdit = await Photo.findByPk(photoId, {
+//         include: User
+//     });
 
 //     return res.json(photoEdit);
 // });
-router.get('/:id(//d+)/edit', requireAuth, async (req, res) => {
+router.put('/:id(\\d+)/edit', requireAuth, async (req, res) => {  /////////////////////////////////////////111111111111111
     const photoId = parseInt(req.params.id, 10);
     const photoEdit = await Photo.findByPk(photoId, {
         include: User

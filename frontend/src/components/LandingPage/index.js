@@ -32,7 +32,7 @@ export const LandingPage = () => {
         };
     }, [changeBackgroundImage])
 
-    
+
 
     return (
         <>
@@ -43,10 +43,11 @@ export const LandingPage = () => {
                     <Link className="start-adventure-button" to="/signup">Start adventure</Link>
                 </div> */}
                 {/* <a className="start-adventure-button" to="/signup">Start adventure</a> */}
-                <Link className="start-adventure-button" to="/signup"></Link>
-                 <button className='start-adventure'>
-                    Start adventure
-                </button> 
+                <Link className="start-adventure-button" to="/signup">
+                    <button className='start-adventure'>
+                        Start adventure
+                    </button>
+                </Link>
             </div>
 
             <div>
@@ -54,7 +55,7 @@ export const LandingPage = () => {
                 <div className="made-by-link">Created By: </div>
                 <a href="https://github.com/jurrel/slickr">Gerryl Esperacion</a>
             </div>
-  
+
         </>
     )
 }

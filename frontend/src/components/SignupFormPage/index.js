@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
+import signupPhotoPage from '../../assets/signupPhotoPage.jpg'
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -31,68 +32,74 @@ function SignupFormPage() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <ul>
-          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-        </ul>
-        <div className="input_field">
-          <input
-            placeholder='First name'
-            type="text"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input_field">
-          <input
-            placeholder='Last name'
-            type="text"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input_field">
-          <input
-            placeholder='Email address'
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input_field">
-          <input
-            placeholder='Username'
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input_field">
-          <input
-            placeholder='Password'
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input_field">
-          <input
-            placeholder='Confirm Password'
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button className="submit" type="submit">Sign Up</button>
-      </form>
-    </div>
+    <>
+      <div>
+        <img className="landing-img" src={signupPhotoPage} alt="" />
+      </div>
+      <div className='form-container'>
+        <form className="sign-up-border" onSubmit={handleSubmit}>
+          <h1>Sign Up for Slickr</h1>
+          <ul>
+            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+          </ul>
+          <div className="input_field">
+            <input
+              placeholder='First name'
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input_field">
+            <input
+              placeholder='Last name'
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input_field">
+            <input
+              placeholder='Email address'
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input_field">
+            <input
+              placeholder='Username'
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input_field">
+            <input
+              placeholder='Password'
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input_field">
+            <input
+              placeholder='Confirm Password'
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button className="submit" type="submit">Sign Up</button>
+        </form>
+      </div>
+    </>
   );
 }
 

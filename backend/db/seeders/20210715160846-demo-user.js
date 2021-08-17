@@ -9,14 +9,14 @@ module.exports = {
         email: "demo@user.io",
         firstName: "Demo",
         lastName: "User",
-        username: "demo",
+        username: "DemoUser",
         hashedPassword: "$2a$12$9UtTcvCcPCNcekKFFheg8.5xjcckbREq6oewJQA86weXcWLn7Mn/G",
       },
       {
         email: "Totsugeki@guiltygear.com",
         firstName: "May",
         lastName: "JustMany",
-        username: "Totsugeki",
+        username: "LittlePrincess",
         hashedPassword: "$2a$12$IiaiBOY/fF.TYKyCcYJrG.jiSoA7H0KcLJje0FmVeAW8L4kX98inC",
       },
       {
@@ -37,7 +37,7 @@ module.exports = {
         email: "Explosion@konosuba.com",
         firstName: "Megumin",
         lastName: "Megumin",
-        username: "Explosion",
+        username: "ArchWizardMegumin",
         hashedPassword: "$2a$12$AYFZBFNK3e4J65wpSN0EveNDJm8gom7XlLzib3CC1IdaR9KnKyT1S",
       },
       {
