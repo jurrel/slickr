@@ -83,9 +83,23 @@ export const deleteOnePhoto = (photoId) => async dispatch => {
 };
 
 //Edit photo
-//trying to see if i can edit on same page
+// trying to see if i can edit on same page
+export const editPhoto = (payload) => async dispatch => {
+    const response = await csrfFetch(`/api/photos/${payload.photoId}`, {
+        method: "PUT",
+        headers: { 'Content-Type': "application/json" },
+        body: JSON.stringify(payload)
+    });
+    if (response.ok) {
+        const updateCaption = await response.json();
+        dispatch(edit(updateCaption));
+        return updateCaption;
+    }
+};
+
+// //if it fails, ill edit on a new page code below
 // export const editPhoto = (payload) => async dispatch => {
-//     const response = await csrfFetch(`/api/photos/${payload.photoId}`, {
+//     const response = await csrfFetch(`/api/photos/${payload.photoId}/edit`, {
 //         method: "PUT",
 //         headers: { 'Content-Type': "application/json" },
 //         body: JSON.stringify(payload)
@@ -97,21 +111,6 @@ export const deleteOnePhoto = (photoId) => async dispatch => {
 //         return updateCaption;
 //     }
 // };
-
-//if it fails, ill edit on a new page code below
-export const editPhoto = (payload) => async dispatch => {
-    const response = await csrfFetch(`/api/photos/${payload.photoId}/edit`, {
-        method: "PUT",
-        headers: { 'Content-Type': "application/json" },
-        body: JSON.stringify(payload)
-    });
-
-    if (response.ok) {
-        const updateCaption = await response.json();
-        dispatch(edit(updateCaption));
-        return updateCaption;
-    }
-};
 
 const initialState = {}
 

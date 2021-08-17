@@ -1,10 +1,11 @@
+import React from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { editPhoto } from '../../store/photo';
 import { useHistory, useParams } from "react-router-dom";
 
 
-function EditImage() {
+export default function EditImage() {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const { photoId } = useParams();
@@ -57,4 +58,3 @@ function EditImage() {
     );
 };
 
-export default EditImage;

@@ -9,7 +9,7 @@ import UploadPage from "./components/UploadPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import { LandingPage } from "./components/LandingPage";
-import EditImage from "./components/EditPhoto";
+// import EditImage from "./components/EditPhoto";
 
 
 function App() {
@@ -43,9 +43,9 @@ function App() {
           <Route path="/homepage">
             <HomePage />
           </Route>
-          <Route path="/photos/:photoId/edit">
+          {/* <Route path="/photos/:photoId/edit">
             <EditImage />
-          </Route>
+          </Route> */}
           <Route>
             <h1>Page Not Found</h1>
           </Route>

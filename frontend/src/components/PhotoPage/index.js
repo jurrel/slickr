@@ -6,6 +6,7 @@ import { useParams, useHistory, Redirect } from "react-router-dom";
 import { deleteOnePhoto, editPhoto } from "../../store/photo";
 import Comments from '../Comments/';
 
+
 import "./PhotoPage.css"
 
 function PhotoPage() {
@@ -62,6 +63,7 @@ function PhotoPage() {
                 <button onClick={updateHelperFunction}>Edit Photo</button> : <></>
             }
             <Comments />
+            
         </>
     );
 };

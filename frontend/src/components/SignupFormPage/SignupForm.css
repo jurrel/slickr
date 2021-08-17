@@ -25,9 +25,9 @@
 }
 
 .sign-up-border{
+    background-color: white;
     display: flex;
     flex-direction: column;
-    background-color: white;
     align-items: center;
     padding: 65px 40px;
     border-radius: 3px;
