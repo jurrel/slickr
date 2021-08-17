@@ -30,7 +30,9 @@ router.put('/:id(\\d+)', requireAuth, async (req, res) => {
     //         id: photoId
     //     },
     // });
-
+    console.log('THIS IS TITLE', title)
+    console.log('THIS IS CAPTION', caption)
+    await photoEdit.update({ title, caption });
     return res.json(photoEdit);
 });
 // router.put('/:id(\\d+)/edit', requireAuth, async (req, res) => {  /////////////////////////////////////////111111111111111
@@ -56,9 +58,10 @@ router.delete('/:id/delete', requireAuth, async (req, res) => {
 
 //Upload/Add photo
 router.post('/', requireAuth, asyncHandler(async (req, res) => {
-    const { userId, imageUrl, caption, albumId } = req.body
+    const { userId, title, imageUrl, caption, albumId } = req.body
     const pictureUpload = await Photo.create({
         userId,
+        title,
         imageUrl,
         caption,
         albumId,
