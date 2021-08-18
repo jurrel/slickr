@@ -9,11 +9,11 @@ function DemoUser() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const handleClick = async(e) => {
+    const handleClick = async (e) => {
         e.preventDefault();
 
         const DemoUser = {
-            credential: 'demo',
+            credential: 'DemoUser',
             password: 'password',
         };
 
@@ -21,10 +21,10 @@ function DemoUser() {
         history.push("/homepage");  //after demo user button is click it automatically goes to home page
     }
 
-    return(
+    return (
         <div >
-            <form onSubmit={ handleClick }>
-                <button className='login'type='submit'> Demo User </button>
+            <form onSubmit={handleClick}>
+                <button className='login' type='submit'> Demo User </button>
             </form>
         </div>
     )

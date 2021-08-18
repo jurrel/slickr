@@ -64,8 +64,8 @@ function PhotoPage() {
             {photo[photoId]?.userId === sessionUser.id ?
                 <button onClick={updateHelperFunction}>Edit Photo</button> : <></>
             }
-            <Comments />
             {editImage && <EditImage setEditImage={setEditImage} /> } {/*So if edit image is true show edit image buttons*/}
+            <Comments />
         </>
     );
 };

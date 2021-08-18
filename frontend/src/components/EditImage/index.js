@@ -9,29 +9,28 @@ export default function EditImage({ setEditImage }) {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const { photoId } = useParams();
-    // const photo = useSelector(state => state.photos[photoId]);
-    const history = useHistory(); //
+    const history = useHistory();
 
     const [title, setTitle] = useState('');
     const [caption, setCaption] = useState('');
 
-    const updateTitle = (e) => setTitle(e.target.value);                   
-    const updateCaption = (e) => setCaption(e.target.value);               
+    const updateTitle = (e) => setTitle(e.target.value);
+    const updateCaption = (e) => setCaption(e.target.value);
 
 
-    const handleSubmit = async (e) => { 
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const payload = { 
+        const payload = {
             caption,
-            title, 
+            title,
             userId: sessionUser.id,
             photoId
         };
 
 
-        let updatePhoto = await dispatch(editPhoto(payload)) 
-        if (updatePhoto) {  
+        let updatePhoto = await dispatch(editPhoto(payload))
+        if (updatePhoto) {
             setTitle('');
             setCaption('');
             history.push(`/photos/${photoId}`)
@@ -49,12 +48,12 @@ export default function EditImage({ setEditImage }) {
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    placeholder="Title"
+                    placeholder="Update Title Name"
                     value={title}
                     onChange={updateTitle} />
                 <input
                     type="text"
-                    placeholder="Caption"
+                    placeholder="Update Caption"
                     value={caption}
                     onChange={updateCaption} />
                 <button type="submit">Update Comment </button>

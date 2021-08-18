@@ -23,7 +23,7 @@ function Navigation({ isLoaded }) {
         <NavLink className='nav-button slickr' exact to="/homepage">Slickr</NavLink>
         <a className='navbar-button' id='profile-btn' href={`/users/${sessionUser.id}`}> Profile </a>
         <NavLink className='navbar-button' to='/upload'>Upload</NavLink>
-        <button className='navbar-button' id='logout-btn' onClick={logout}>Log Out</button>
+        <button className='navbar-button logout' id='logout-btn' onClick={logout}>Log Out</button>
         {/* <NavLink className='nav-button slickr' exact to="/homepage"><span className="slickr"></span></NavLink> Why do i need a div to get icon to show up */}
         {/* <a className='logo' href="http://localhost:3000/homepage"><img src={slickrLogo} /></a> */}
       </>
@@ -31,7 +31,7 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <>
-        <NavLink className='navbar-button' id='logInButton' to="/login">Log In</NavLink>
+        <NavLink className='navbar-button ' id='logInButton' to="/login">Log In</NavLink>
         <NavLink className='navbar-button' id='signUpButton' to="/signup">Sign Up</NavLink>
       </>
     );

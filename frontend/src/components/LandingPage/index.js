@@ -5,6 +5,10 @@ import landingPageImage1 from '../../assets/landingPageImage1.jpg'
 import landingPageImage2 from '../../assets/landingPageImage2.jpg'
 import landingPageImage3 from '../../assets/landingPageImage3.jpg'
 import landingPageImage4 from '../../assets/landingPageImage4.jpg'
+import landingPageImage5 from '../../assets/landingPageImage5.jpg'
+import landingPageImage6 from '../../assets/landingPageImage6.jpg'
+import landingPageImage7 from '../../assets/landingPageImage7.jpg'
+import landingPageImage8 from '../../assets/landingPageImage8.jpg'
 import './LandingPage.css';
 
 export const LandingPage = () => {
@@ -17,7 +21,11 @@ export const LandingPage = () => {
             landingPageImage1,
             landingPageImage2,
             landingPageImage3,
-            landingPageImage4
+            landingPageImage4,
+            landingPageImage5,
+            landingPageImage6,
+            landingPageImage7,
+            landingPageImage8,
         ];
         const changeBackgroundInterval = setTimeout(function () {
             setBackgroundImage(backgroundImages[changeBackgroundImage]);
@@ -39,22 +47,18 @@ export const LandingPage = () => {
 
             <div className='landing-page-header'>Share your adventures
                 <div className='landing-page-body'>Join the Slickr community, where memories are stored</div>
-                {/* <div>
-                    <Link className="start-adventure-button" to="/signup">Start adventure</Link>
-                </div> */}
-                {/* <a className="start-adventure-button" to="/signup">Start adventure</a> */}
                 <Link className="start-adventure-button" to="/signup">
                     <button className='start-adventure'>
                         Start adventure
                     </button>
                 </Link>
             </div>
-
             <div>
                 <img className="landing-img" src={backgroundImage} alt="" />
                 <div className="made-by-link">Created By: </div>
                 <a href="https://github.com/jurrel/slickr">Gerryl Esperacion</a>
             </div>
+
 
         </>
     )

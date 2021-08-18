@@ -43,9 +43,9 @@ export default function Comments() {
 
 
         let createNewComment = await dispatch(createComment(payload))
-        if (createNewComment) {  ////////////////////////
-            history.push(`/photos/${photoId}`)/////////////////
-        }////////////////////
+        if (createNewComment) {
+            history.push(`/photos/${photoId}`)
+        }
 
     }
 

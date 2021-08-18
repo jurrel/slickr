@@ -21,11 +21,14 @@
 .navbar-button {
     /* take away underline */
     text-decoration: none;
-    color: black;
+    color: white;
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
     font-weight: 700;
 }
 
+.logout{
+    color: black;
+}
 .navbar-container {
     background-color: #0b0b0c2a;
     color: #212124;

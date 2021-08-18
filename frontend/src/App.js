@@ -9,8 +9,6 @@ import UploadPage from "./components/UploadPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import { LandingPage } from "./components/LandingPage";
-// import EditImage from "./components/EditPhoto";
-
 
 function App() {
   const dispatch = useDispatch();
@@ -43,9 +41,6 @@ function App() {
           <Route path="/homepage">
             <HomePage />
           </Route>
-          {/* <Route path="/photos/:photoId/edit">
-            <EditImage />
-          </Route> */}
           <Route>
             <h1>Page Not Found</h1>
           </Route>

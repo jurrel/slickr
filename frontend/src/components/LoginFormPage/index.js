@@ -58,7 +58,7 @@ function LoginFormPage() {
           </div>
           <button className='login' type="login">Log In</button>
         </form>
-        <DemoUser className='login'></DemoUser>
+        <DemoUser className='login'></DemoUser> {/*DEmo user no longer works*/}
       </div>
     </>
   );
