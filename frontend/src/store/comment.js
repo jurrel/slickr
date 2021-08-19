@@ -56,7 +56,7 @@ export const createComment = (comment) => async dispatch => {
 
 //Still need a delete and an Edit thunk
 export const updateComment = (comment) => async dispatch => {
-    const {content, id} = comment
+    const { content, id } = comment
     const response = await csrfFetch(`/api/comments/${id}`, {
         method: 'PUT',
         body: JSON.stringify(comment),
@@ -96,19 +96,19 @@ const commentReducer = (state = initialState, action) => {
             addNewComment[action.comment.id] = action.comment
             return addNewComment
         }
-        case DELETE_COMMENT: { ////////////////////////////////////////////////////////
-            const photo = { ...state };
-            delete photo[action.photo]
-            return photo
-        }/////////////////////////////////////
-        case EDIT_COMMENT: { ////////////////////////////////////////////////////////////////
+        case DELETE_COMMENT: {
+            const comment = { ...state };
+            delete comment[action.comment]
+            return comment
+        }
+        case EDIT_COMMENT: { 
             const edit = { ...state };
-            edit[action.photo.id] = action.photo;
+            edit[action.comment.id] = action.comment;
             return edit
-        } ////////////////////////////
+        }
         default:
             return state
     }
 }
- 
+
 export default commentReducer;

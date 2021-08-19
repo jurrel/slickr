@@ -14,6 +14,7 @@ module.exports = {
         references: { model: 'Users' }
       },
       title: {
+        allowNull: false,
         allowNull: true,
         type: Sequelize.TEXT
       },

@@ -58,7 +58,7 @@ img {
   opacity: 1;
   position: absolute;
   left: 0px;
-  bottom: 0px;
+  bottom: 5px;
   right: 0px;
   color: white;
   transform: scale(1.05);

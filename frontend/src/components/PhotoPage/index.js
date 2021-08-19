@@ -14,6 +14,7 @@ function PhotoPage() {
     const history = useHistory();
     const { photoId } = useParams(); ///////////////////////////////////////////////
     const photo = useSelector(state => state.photo);
+    const user = useSelector(state => state.user); ///////
     const sessionUser = useSelector(state => state.session.user);
 
     const [editImage, setEditImage] = useState(false)
@@ -50,16 +51,18 @@ function PhotoPage() {
     return (
         <>
 
-            <div className='photo-container'>
+            <div>
                 <div className="title-single-photo">
                     {photo[photoId]?.title}
                 </div>
                 <img className='single-photo' src={photo[photoId]?.imageUrl} alt="picture" />
                 <div>
                     {photo[photoId]?.caption}
-                    {/* {NOT SURE HOW TO ADD USERNAME } */}
+                    {/* {photo[photoId].User?.username} */}
                 </div>
-
+                <div>
+                    By {photo[photoId]?.User?.username}
+                </div>
             </div>
             {photo[photoId]?.userId === sessionUser.id ?
                 <button onClick={deleteHelperFunction}>Delete Photo</button> : <></>
