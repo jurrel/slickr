@@ -20,7 +20,7 @@ img {
 
 .single-photo-home-page:hover{
   /* z-index: 1; */
-  transform: scale(1.25);
+  transform: scale(1.05);
   box-shadow: 0 25px 40px rgba(0, 0, 0, 0.8);
 }
 
@@ -58,10 +58,10 @@ img {
   opacity: 1;
   position: absolute;
   left: 0px;
-  bottom: 20px;
+  bottom: 0px;
   right: 0px;
   color: white;
-  /* align-items: stretch; */
+  transform: scale(1.05);
   background-color: rgba(0, 0, 0, 0.8);
   line-height: 2;
 }

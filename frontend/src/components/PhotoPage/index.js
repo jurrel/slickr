@@ -49,11 +49,15 @@ function PhotoPage() {
 
     return (
         <>
+
             <div className='photo-container'>
-                <div>{photo[photoId]?.title} </div>
+                <div className="title-single-photo">
+                    {photo[photoId]?.title}
+                </div>
                 <img className='single-photo' src={photo[photoId]?.imageUrl} alt="picture" />
-                <div>{photo[photoId]?.caption}
-                    <div> By {sessionUser.username}</div>
+                <div>
+                    {photo[photoId]?.caption}
+                    {/* {NOT SURE HOW TO ADD USERNAME } */}
                 </div>
 
             </div>
@@ -66,7 +70,7 @@ function PhotoPage() {
             {editImage && <EditImage setEditImage={setEditImage} />} {/*So if edit image is true show edit image buttons*/}
             <Comments />
         </>
-    ); 
+    );
 };
 
 export default PhotoPage;

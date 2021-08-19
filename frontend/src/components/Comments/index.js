@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Redirect, useHistory } from "react-router-dom";
-import { getComments, createComment } from "../../store/comment";
+import { getComments, createComment, removeComment } from "../../store/comment";
 import './Comments.css'
 
 
@@ -11,7 +11,7 @@ export default function Comments() {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
-    const { photoId, userId } = useParams();
+    const { photoId, userId, username } = useParams();
 
     const [comment, setComment] = useState('');
 
@@ -44,9 +44,16 @@ export default function Comments() {
 
         let createNewComment = await dispatch(createComment(payload))
         if (createNewComment) {
+            setComment('')
             history.push(`/photos/${photoId}`)
         }
 
+    }
+
+    const deleteHelperFunction = async (e) => {
+        e.preventDefault();
+        await dispatch(removeComment(comment.id))
+        history.push(`/photos/${photoId}`);
     }
 
     return (
@@ -65,8 +72,11 @@ export default function Comments() {
                 </div>
                 <div>
                     <button onClick={handleSubmit}>Post Comment</button>
+                    <button onClick={deleteHelperFunction}>DELETE Comment</button>
+
                 </div>
             </form>
+
 
         </div>
     );

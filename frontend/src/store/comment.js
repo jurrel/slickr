@@ -53,8 +53,29 @@ export const createComment = (comment) => async dispatch => {
     }
 };
 
-//Still need a delete and an Edit thunk
 
+//Still need a delete and an Edit thunk
+export const updateComment = (comment) => async dispatch => {
+    const {content, id} = comment
+    const response = await csrfFetch(`/api/comments/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(comment),
+    });
+    if (response.ok) {
+        const editAComment = await response.json();
+        dispatch(editComment(editAComment))
+        return editAComment
+    }
+}
+
+export const removeComment = (id) => async dispatch => {
+    const response = await csrfFetch(`/api/comments/${id}`, {
+        method: 'DELETE',
+    });
+    if (response.ok) {
+        dispatch(deleteComment(id))
+    }
+}
 
 const initialState = {};
 
@@ -74,10 +95,20 @@ const commentReducer = (state = initialState, action) => {
             const addNewComment = { ...state }
             addNewComment[action.comment.id] = action.comment
             return addNewComment
-        } 
+        }
+        case DELETE_COMMENT: { ////////////////////////////////////////////////////////
+            const photo = { ...state };
+            delete photo[action.photo]
+            return photo
+        }/////////////////////////////////////
+        case EDIT_COMMENT: { ////////////////////////////////////////////////////////////////
+            const edit = { ...state };
+            edit[action.photo.id] = action.photo;
+            return edit
+        } ////////////////////////////
         default:
             return state
     }
 }
-
+ 
 export default commentReducer;

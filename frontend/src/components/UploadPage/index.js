@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { uploadPhoto } from '../../store/photo'
 import { useHistory } from 'react-router-dom';
+import "./UploadPage.css"
 
 
 const UploadPage = () => {
@@ -10,7 +11,7 @@ const UploadPage = () => {
     const history = useHistory();
     const [imageUrl, setImageUrl] = useState('');
     const [caption, setCaption] = useState('');
-    const [title, setTitle] = useState('');  ////////////////
+    const [title, setTitle] = useState(''); 
 
     const createNewImageUrl = (e) => setImageUrl(e.target.value)
     const createNewCaption = (e) => setCaption(e.target.value)
@@ -23,7 +24,7 @@ const UploadPage = () => {
         const payload = {
             imageUrl,
             caption,
-            title, ////////////////
+            title, 
             userId: sessionUser.id
         };
 
@@ -41,7 +42,7 @@ const UploadPage = () => {
 
 
     return (
-        <section className="new-form-holder centered middled">
+        <section className="upload-photo-page-container">
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"

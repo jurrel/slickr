@@ -98,20 +98,6 @@ export const editPhoto = (payload) => async dispatch => {
     }
 };
 
-// //if it fails, ill edit on a new page code below
-// export const editPhoto = (payload) => async dispatch => {
-//     const response = await csrfFetch(`/api/photos/${payload.photoId}/edit`, {
-//         method: "PUT",
-//         headers: { 'Content-Type': "application/json" },
-//         body: JSON.stringify(payload)
-//     });
-
-//     if (response.ok) {
-//         const updateCaption = await response.json();
-//         dispatch(edit(updateCaption));
-//         return updateCaption;
-//     }
-// };
 
 const initialState = {}
 
