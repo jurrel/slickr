@@ -1,4 +1,4 @@
-import { useEffect} from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPhotos } from '../../store/photo';
 import { useHistory } from 'react-router-dom';
@@ -7,7 +7,9 @@ import './HomePage.css';
 function HomePage() {
     const dispatch = useDispatch();
     const history = useHistory()
-    
+    const sessionUser = useSelector(state => state.session.user);
+
+
     const showPhoto = (e) => {
         history.push(`/photos/${photo.id}`)
     }
@@ -18,24 +20,38 @@ function HomePage() {
     }, [dispatch]);
 
     //Object.values converts objects into arrays
-    const photos = useSelector((state) => Object.values(state.photo)); //grabs state from photoReducer
-    const photo = useSelector((state) => state.photo); 
+    const photos = useSelector((state) => Object.values(state.photo));
+    const photo = useSelector((state) => state.photo);
 
 
     return (
-        <div>
-            {photos?.map((photo) => (
-                <>
-                    <a href={`/photos/${photo.id}`} onClick={showPhoto}>
-                        <img src={photo.imageUrl} alt="photo"/>
-                    </a>
-                </>
-            ))}
+        <div className='gallery'>
+            <div className='photo-layout'>
+                {photos?.map((photo) => (
+
+                    <div class="photo-description-box">
+                        <a href={`/photos/${photo.id}`} onClick={showPhoto}>
+                            <img className='single-photo-home-page' src={photo.imageUrl} alt="photo" />
+                            <div class="photo-description-content">
+                                    <p>{photo.title} </p>
+                                    <p>By {sessionUser.username}</p>
+                            </div>
+                        </a>
+                    </div>
+
+                ))}
+            </div>
         </div>
     )
 }
 
 export default HomePage;
+
+
+
+
+
+
 
 
 

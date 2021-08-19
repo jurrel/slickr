@@ -1,9 +1,9 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { edit, getPhoto } from '../../store/photo';
+import { getPhoto } from '../../store/photo';
 import { useParams, useHistory, Redirect } from "react-router-dom";
-import { deleteOnePhoto, editPhoto } from "../../store/photo";
+import { deleteOnePhoto } from "../../store/photo";
 import Comments from '../Comments/';
 import EditImage from '../EditImage/';
 import "./PhotoPage.css"
@@ -12,13 +12,14 @@ import "./PhotoPage.css"
 function PhotoPage() {
     const dispatch = useDispatch();
     const history = useHistory();
-    const { photoId, caption, title } = useParams(); ///////////////////////////////////////////////
+    const { photoId } = useParams(); ///////////////////////////////////////////////
     const photo = useSelector(state => state.photo);
     const sessionUser = useSelector(state => state.session.user);
 
     const [editImage, setEditImage] = useState(false)
     console.log('THIS IS PHOTO', photo)
     console.log('THIS IS SESSION USER', sessionUser)
+    console.log('THIS IS SPECIFIC SESSIONUSER', sessionUser.username)
     console.log('THIS IS PHOTOID photopage', photoId)
 
     //reloads page everytime photoId changes
@@ -41,33 +42,31 @@ function PhotoPage() {
         history.push(`/homepage`);
     }
 
-    // // Lets original user update their photo DOESNT WORK
-    const updateHelperFunction = (e) => { //////////////////////////////////
-        // e.preventDefault();
-        // dispatch(editPhoto({ title, caption, photoId }));
-        // history.push(`/photos/${photoId}`);
+    const updateHelperFunction = (e) => {
         setEditImage(!editImage)
-    } //////////////////////////////////////////////////////////
+    }
 
 
     return (
         <>
-            <img src={photo[photoId]?.imageUrl} alt="picture" />
-            <div>{photo[photoId]?.title} </div>
-            <div>{photo[photoId]?.caption} </div>
-            <div>{photo[photoId]?.username}</div> {/*Poster's username is not displaying Need a way to convert user id to username*/}
+            <div className='photo-container'>
+                <div>{photo[photoId]?.title} </div>
+                <img className='single-photo' src={photo[photoId]?.imageUrl} alt="picture" />
+                <div>{photo[photoId]?.caption}
+                    <div> By {sessionUser.username}</div>
+                </div>
 
-
+            </div>
             {photo[photoId]?.userId === sessionUser.id ?
                 <button onClick={deleteHelperFunction}>Delete Photo</button> : <></>
             }
             {photo[photoId]?.userId === sessionUser.id ?
                 <button onClick={updateHelperFunction}>Edit Photo</button> : <></>
             }
-            {editImage && <EditImage setEditImage={setEditImage} /> } {/*So if edit image is true show edit image buttons*/}
+            {editImage && <EditImage setEditImage={setEditImage} />} {/*So if edit image is true show edit image buttons*/}
             <Comments />
         </>
-    );
+    ); 
 };
 
 export default PhotoPage;

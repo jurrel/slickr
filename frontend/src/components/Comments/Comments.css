@@ -1,12 +1,4 @@
-.single-photo {
-    width: 75%;
-    height:auto;
-    display: block;
-    box-shadow: 0 0 15px rgba(0, 0 , 0, .2);
-    box-sizing: border-box;
-}
-
-.photo-container {
+.comment-container {
     overflow: hidden;
     max-height: 100vh;
     display: flex;

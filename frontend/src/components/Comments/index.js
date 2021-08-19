@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Redirect, useHistory } from "react-router-dom";
 import { getComments, createComment } from "../../store/comment";
-
+import './Comments.css'
 
 
 
@@ -51,7 +51,7 @@ export default function Comments() {
 
     return (
         <div>
-            <div>
+            <div className='comment-container'>
                 {comments &&
                     comments.map(comment => (
                         <div key={comment?.id}>

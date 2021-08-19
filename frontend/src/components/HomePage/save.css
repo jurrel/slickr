@@ -1,7 +1,7 @@
 img {
     width: 100%;
     height:auto;
-    display: block;
+    /* display: block; */
     margin-bottom: 10px;
     padding:10px;
     background: white;
@@ -18,7 +18,7 @@ img {
 }
 
 
-.single-photo-home-page:hover{
+.single-photo:hover{
   /* z-index: 1; */
   transform: scale(1.25);
   box-shadow: 0 25px 40px rgba(0, 0, 0, 0.8);
@@ -58,10 +58,11 @@ img {
   opacity: 1;
   position: absolute;
   left: 0px;
-  bottom: 20px;
+  bottom: 2px;
   right: 0px;
   color: white;
   /* align-items: stretch; */
   background-color: rgba(0, 0, 0, 0.8);
   line-height: 2;
+  display: grid;
 }

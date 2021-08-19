@@ -39,8 +39,8 @@ export const getComments = (id) => async dispatch => {
 };
 
 //Creates a new comment for a specific photo
-export const createComment = (comment) => async dispatch => {   //////////////////////////////
-    const response = await csrfFetch(`/api/comments/${comment.photoId}`, {///////////////////////////////////
+export const createComment = (comment) => async dispatch => {
+    const response = await csrfFetch(`/api/comments/${comment.photoId}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(comment)
@@ -51,7 +51,7 @@ export const createComment = (comment) => async dispatch => {   ////////////////
         dispatch(addComment(addAComment))
         return addAComment
     }
-};  /////////////////////////////////////////////////////////////////////////////
+};
 
 //Still need a delete and an Edit thunk
 
@@ -70,11 +70,11 @@ const commentReducer = (state = initialState, action) => {
                 ...allComments, ...state
             }
         }
-        case ADD_COMMENT: {/////////////////////
+        case ADD_COMMENT: {
             const addNewComment = { ...state }
             addNewComment[action.comment.id] = action.comment
             return addNewComment
-        } /////////////////
+        } 
         default:
             return state
     }
