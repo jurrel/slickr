@@ -11,7 +11,7 @@ export default function Comments() {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
-    const { photoId, userId, username } = useParams();
+    const { photoId } = useParams();
 
     const [comment, setComment] = useState('');
 
@@ -23,8 +23,7 @@ export default function Comments() {
 
     useEffect(() => {
         dispatch(getComments(photoId));
-        // dispatch(createComment(userId))  //breaks Suppose to refresh page when comment is added
-    }, [dispatch, photoId, userId]);
+    }, [dispatch, photoId]);
 
     if (!comments) return null;
 

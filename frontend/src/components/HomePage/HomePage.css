@@ -2,11 +2,9 @@ img {
     width: 100%;
     height:auto;
     display: block;
-    margin-bottom: 10px;
-    padding:10px;
-    background: white;
     box-shadow: 0 0 15px rgba(0, 0 , 0, .2);
     box-sizing: border-box;
+    background-size: cover;
 }
 
 /*How the photos are arranged on the explorer page*/
@@ -17,12 +15,24 @@ img {
     padding: 5%;
 }
 
+.single-photo-home-page {
+  width: 100%;
+  height:auto;
+  display: block;
+  margin-bottom: 10px;
+  padding:10px;
+  background: white; 
+  box-shadow: 0 0 15px rgba(0, 0 , 0, .2);
+  box-sizing: border-box;
+  background-size: cover;
+}
 
-.single-photo-home-page:hover{
-  /* z-index: 1; */
+.single-photo-home-page:hover{  /*Makes photo pop-up*/
+  z-index: 3;
   transform: scale(1.05);
   box-shadow: 0 25px 40px rgba(0, 0, 0, 0.8);
 }
+
 
 
  /*What is used to keep captions and username on display*/ 
@@ -31,25 +41,11 @@ img {
     display: inline-block;
     position: relative;
     margin: 10px;
-/* 
-    opacity: 0;
-    visibility: hidden; */
 }
 
 .photo-description-content {
   font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
-  /* position: absolute; */
-  /* top: 0; */
-  /* bottom: 20px;
-  left: 0;
-  right: 10px; */
-  /* background: rgba(29, 106, 154, 0.72); */
-  /* color: #fff; */
-  /* line-height: 10; */
-  /* visibility: hidden; */
-  opacity: 0;
-  /* display: grid; */
-  
+  opacity: 0;  
 }  
 
 .photo-description-box:hover .photo-description-content {
@@ -58,7 +54,7 @@ img {
   opacity: 1;
   position: absolute;
   left: 0px;
-  bottom: 5px;
+  bottom: 2px;
   right: 0px;
   color: white;
   transform: scale(1.05);

@@ -3,6 +3,7 @@ import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import './Navigation.css';
+import UploadPageModal from '../UploadPhotoModal';
 
 
 function Navigation({ isLoaded }) {
@@ -20,12 +21,10 @@ function Navigation({ isLoaded }) {
   if (sessionUser) {
     sessionLinks = (
       <>
-        <NavLink className='nav-button slickr' exact to="/homepage">Slickr</NavLink>
+        <NavLink className='nav-button-slickr' exact to="/homepage">Slickr</NavLink>
         <a className='navbar-button' id='profile-btn' href={`/users/${sessionUser.id}`}> Profile </a>
-        <NavLink className='navbar-button' to='/upload'>Upload</NavLink>
-        <button className='navbar-button logout' id='logout-btn' onClick={logout}>Log Out</button>
-        {/* <NavLink className='nav-button slickr' exact to="/homepage"><span className="slickr"></span></NavLink> Why do i need a div to get icon to show up */}
-        {/* <a className='logo' href="http://localhost:3000/homepage"><img src={slickrLogo} /></a> */}
+        < UploadPageModal />
+        <button className='navbar-button logout-btn'  onClick={logout}>Log Out</button>
       </>
     );
   } else {

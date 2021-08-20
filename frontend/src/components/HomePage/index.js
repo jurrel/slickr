@@ -24,7 +24,7 @@ function HomePage() {
 
 
     return (
-        <div className='gallery'>
+        <div>
             <div className='photo-layout'>
                 {photos?.map((photo) => (
                     <div class="photo-description-box">
@@ -38,6 +38,7 @@ function HomePage() {
                     </div>
                 ))}
             </div>
+            
         </div>
     )
 }

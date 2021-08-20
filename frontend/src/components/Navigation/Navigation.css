@@ -1,23 +1,9 @@
-/* .nav-container {
-    display: flex;
-    justify-content: space-between;
-} */
-/* .slickr {
-    background-image: url("../../assets/Slickr.png");
-    background-size: 50px;
-    background-repeat: no-repeat;
-    width: 50px;
-    height: 50px;
-    margin-right: 0.5em;
-    margin-top: 50px;
-} */
-
-/* .navbar-button {
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-} */
-
+.nav-button-slickr{
+    text-decoration: none;
+    color: white;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    font-weight: 700;
+}
 .navbar-button {
     /* take away underline */
     text-decoration: none;
@@ -26,11 +12,15 @@
     font-weight: 700;
 }
 
-.logout{
+.logout-btn{
     color: black;
 }
+.logout-btn:hover{
+    color: black;
+    cursor: pointer;
+}
 .navbar-container {
-    background-color: #0b0b0c2a;
+    background-color: #000000;
     color: #212124;
     position: -webkit-sticky;
     position: sticky;
@@ -40,6 +30,6 @@
     align-items: center;
     /* position: fixed; */
     width:100%;
-    z-index: 2000;
+    z-index: 2;
 }
 

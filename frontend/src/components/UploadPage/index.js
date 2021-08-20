@@ -39,22 +39,21 @@ const UploadPage = () => {
         e.preventDefault();
         history.push('/homepage')
     }; 
-
-
+ 
     return (
-        <section className="upload-photo-page-container">
-            <form onSubmit={handleSubmit}>
-                <input
+        <section className="upload-photo-page-container ">
+            <form  className="upload-photo-page-container" onSubmit={handleSubmit}>
+                <input className="input_field" 
                     type="text"
                     placeholder="Image URL"
                     value={imageUrl}
                     onChange={createNewImageUrl} />
-                <input
+                <input className="input_field"
                     type="text"
                     placeholder="title"
                     value={title}
                     onChange={createNewTitle} />
-                <input
+                <input className="input_field"
                     type="text"
                     placeholder="Caption"
                     value={caption}

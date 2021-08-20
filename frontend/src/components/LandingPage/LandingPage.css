@@ -1,23 +1,21 @@
-
 .landing-img{
   background-size: cover;
-  top:25%;
   width: 100%;
   height: 100%;
   position: fixed;
-  z-index: -1; /*Makes sure photos are below the navBar*/
+  z-index: -1;
   top:0px;
 }
 
-
-
 .landing-page-header {
   text-align: center;
-  margin-top: 500px ;
+  margin-top: 300px;
   color: white;
   font-size: 40px;
   font-weight: 900;
+
 } 
+
 
 .start-adventure-button {
   font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
@@ -30,7 +28,6 @@
   padding: 0 20px;
   box-sizing: border-box;
   display: inline-block;
-  
 }
 
 .start-adventure {
@@ -41,11 +38,33 @@
   background-color: #white;
   border: 1px solid black;
   padding: 15px 32px;
-  text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 8px;
+ 
+}
+
+.bottom-bar-landing{
+  color: white;
+  background-color: black;
+  width: 100%;
+  height: 7vh;
+  position:absolute;
+  bottom:0;
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.git-hub-link{
+  text-decoration: none;
+  color: white;
+  right: 150px;
+}
+.fa-github {
+  font-size: 45px;
+
 }

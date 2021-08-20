@@ -1,33 +1,23 @@
-/* .single-photo {
-    width: 75%;
-    height:auto;
-    display: block;
-    box-shadow: 0 0 15px rgba(0, 0 , 0, .2);
-    box-sizing: border-box;
-} */
-
-.single-photo {
+.single-photo-photo-page {
     width: 40%;
     height:50%;
     display: block;
     box-shadow: 0 0 15px rgba(0, 0 , 0, .2);
     box-sizing: border-box;
-}
-
-
-
-.photo-container {
-    overflow: hidden;
-    max-height: 100vh;
     display: flex;
-    flex-direction: column;
-    background-color: #F3F5F6;
     justify-content: center;
-    align-items: center;
-    width: auto;
-    padding: 20px;
+    margin: auto;
+    margin-bottom: 10px;
+  padding:10px;
+  background: white; 
+  box-shadow: 0 0 15px rgba(0, 0 , 0, .2);
+  background-size: cover;
 }
-.title-single-photo{
+
+
+.title-single-photo-page{
     font-weight: Bold;
     font-size: 30px;
+    display: flex;
+    justify-content: center;
 }

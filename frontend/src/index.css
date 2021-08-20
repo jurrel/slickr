@@ -1,11 +1,12 @@
 /* TODO Add site wide styles */
-/* @import-normalize;
+@import-normalize;
 
 html {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url(./assets/light.jpg);
-  background-size: cover;
-} */
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	/* background-image: url(./assets/light.jpg);
+	background-size: cover; */
+  }
+
 /* reset css here */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,

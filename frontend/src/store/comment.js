@@ -56,7 +56,7 @@ export const createComment = (comment) => async dispatch => {
 
 //Still need a delete and an Edit thunk
 export const updateComment = (comment) => async dispatch => {
-    const { content, id } = comment
+    const { id } = comment
     const response = await csrfFetch(`/api/comments/${id}`, {
         method: 'PUT',
         body: JSON.stringify(comment),

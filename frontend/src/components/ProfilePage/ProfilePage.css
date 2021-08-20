@@ -1,0 +1,31 @@
+.photo-layout-profile-page {  
+   width: 90%;
+   padding: 20px;
+   margin: 100px auto;
+   display: flex; 
+}
+
+.img-box-profile-page {
+    width: 250px;
+    margin: 0 10px;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, .1);
+    transition: 1s;
+}
+
+.img-box-profile-page img{
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.img-box-profile-page:hover{
+    transform: scale(1.3);
+    z-index:2
+}
+
+.title-single-photo-profile-page{
+    font-weight: Bold;
+    font-size: 30px;
+    display: flex;
+    justify-content:center;
+}

@@ -12,16 +12,12 @@ import "./PhotoPage.css"
 function PhotoPage() {
     const dispatch = useDispatch();
     const history = useHistory();
-    const { photoId } = useParams(); ///////////////////////////////////////////////
+    const { photoId } = useParams();
     const photo = useSelector(state => state.photo);
-    const user = useSelector(state => state.user); ///////
     const sessionUser = useSelector(state => state.session.user);
 
     const [editImage, setEditImage] = useState(false)
-    console.log('THIS IS PHOTO', photo)
-    console.log('THIS IS SESSION USER', sessionUser)
-    console.log('THIS IS SPECIFIC SESSIONUSER', sessionUser.username)
-    console.log('THIS IS PHOTOID photopage', photoId)
+ 
 
     //reloads page everytime photoId changes
     useEffect(() => {
@@ -52,13 +48,12 @@ function PhotoPage() {
         <>
 
             <div>
-                <div className="title-single-photo">
+                <div className="title-single-photo-page">
                     {photo[photoId]?.title}
                 </div>
-                <img className='single-photo' src={photo[photoId]?.imageUrl} alt="picture" />
+                <img className='single-photo-photo-page' src={photo[photoId]?.imageUrl} alt="picture" />
                 <div>
                     {photo[photoId]?.caption}
-                    {/* {photo[photoId].User?.username} */}
                 </div>
                 <div>
                     By {photo[photoId]?.User?.username}

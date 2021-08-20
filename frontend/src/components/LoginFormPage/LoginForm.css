@@ -15,10 +15,8 @@
     flex-direction: column;
     background-color: white;
     align-items: center;
-    /* position: absolute; */
     padding: 65px 40px;
     border-radius: 3px;
-    /* top: 0; */
 }
 
 .login {

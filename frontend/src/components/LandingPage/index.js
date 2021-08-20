@@ -41,12 +41,11 @@ export const LandingPage = () => {
     }, [changeBackgroundImage])
 
 
-
     return (
         <>
 
-            <div className='landing-page-header'>Share your adventures
-                <div className='landing-page-body'>Join the Slickr community, where memories are stored</div>
+            <div className='landing-page-header'>Share your adventures {"\n"}
+                <div >Join the Slickr community, where memories are stored</div>
                 <Link className="start-adventure-button" to="/signup">
                     <button className='start-adventure'>
                         Start adventure
@@ -55,11 +54,13 @@ export const LandingPage = () => {
             </div>
             <div>
                 <img className="landing-img" src={backgroundImage} alt="" />
-                <div className="made-by-link">Created By: </div>
-                <a href="https://github.com/jurrel/slickr">Gerryl Esperacion</a>
+                <div className="bottom-bar-landing">
+                    {/* <i class="fa fa-github"></i> */}
+                    <a className='git-hub-link' href="https://github.com/jurrel/slickr"> 
+                        <i class="fa fa-github"></i>
+                    </a>
+                </div>
             </div>
-
-
         </>
     )
 }

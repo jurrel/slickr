@@ -6,6 +6,7 @@ const LOAD_ONE = 'photo/LOADONE';
 const DELETE = 'photo/DELETE';
 const UPLOAD = 'photos/UPLOAD';
 const EDIT = 'photos/EDIT';
+const USER_PHOTOS = 'photos/USER_PHOTOS' ////
 
 //action creator  => used to update the reducer
 export const loadAllPhotos = photos => ({
@@ -33,6 +34,10 @@ export const edit = photo => ({
     photo,
 });
 
+export const userPhotos = photos => ({
+    type: USER_PHOTOS,
+    photos
+})
 
 //Getting all photos
 export const getPhotos = () => async dispatch => {
@@ -83,7 +88,6 @@ export const deleteOnePhoto = (photoId) => async dispatch => {
 };
 
 //Edit photo
-// trying to see if i can edit on same page
 export const editPhoto = (payload) => async dispatch => {
     console.log('WHAT IS PAYLOAD', payload)
     const response = await csrfFetch(`/api/photos/${payload.photoId}`, {
@@ -97,6 +101,15 @@ export const editPhoto = (payload) => async dispatch => {
         return updateCaption;
     }
 };
+
+//Getting all photos posted by user   
+export const getUserPhotos = (id) => async dispatch => {
+    const response = await csrfFetch(`/api/users/${id}`);
+    if (response.ok) {
+        const getAllUserPhotos = await response.json();
+        dispatch(userPhotos(getAllUserPhotos));
+    }
+}
 
 
 const initialState = {}
@@ -128,6 +141,13 @@ const photoReducer = (state = initialState, action) => {
             const edit = { ...state };
             edit[action.photo.id] = action.photo;
             return edit
+        }
+        case USER_PHOTOS: {
+            const showAllUserPhotos = {};
+            action.photos.forEach(photo => {
+                showAllUserPhotos[photo.id] = photo
+            });
+            return showAllUserPhotos
         }
         default:
             return state;
