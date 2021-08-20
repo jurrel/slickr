@@ -61,7 +61,11 @@ export default function Comments() {
                 {comments &&
                     comments.map(comment => (
                         <div key={comment?.id}>
-                            {comment.User?.username}: {comment?.comment}
+                            <div className='comment-container2'>{comment.User?.username}:
+                                <div className='trying-space'>
+                                    {comment?.comment}
+                                </div>
+                            </div>
                         </div>
                     ))}
             </div>
@@ -75,8 +79,6 @@ export default function Comments() {
 
                 </div>
             </form>
-
-
         </div>
     );
 }

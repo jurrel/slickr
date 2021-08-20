@@ -47,7 +47,7 @@ function PhotoPage() {
     return (
         <>
 
-            <div>
+            <div className='mega-container'>
                 <div className="title-single-photo-page">
                     {photo[photoId]?.title}
                 </div>

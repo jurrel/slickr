@@ -10,7 +10,13 @@
     color: white;
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
     font-weight: 700;
+    display: flex;
+    justify-content: flex-start;
 }
+/* .btn-left {
+    display: flex;
+    justify-content: flex-start;
+} */
 
 .logout-btn{
     color: black;
@@ -28,7 +34,6 @@
     justify-content: space-around;
     height: 50px;
     align-items: center;
-    /* position: fixed; */
     width:100%;
     z-index: 2;
 }

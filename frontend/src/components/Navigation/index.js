@@ -21,7 +21,9 @@ function Navigation({ isLoaded }) {
   if (sessionUser) {
     sessionLinks = (
       <>
-        <NavLink className='nav-button-slickr' exact to="/homepage">Slickr</NavLink>
+        <div className='btn-left'>
+          <NavLink className='nav-button-slickr' exact to="/homepage">Slickr</NavLink>
+        </div>
         <a className='navbar-button' id='profile-btn' href={`/users/${sessionUser.id}`}> Profile </a>
         < UploadPageModal />
         <button className='navbar-button logout-btn'  onClick={logout}>Log Out</button>
