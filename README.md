@@ -3,6 +3,7 @@
 2. [Technologies](https://github.com/jurrel/slickr#Technologies)
 3. [Relevent Documents](https://github.com/jurrel/slickr#Relevent-Documents)
 4. [Navigating through website](https://github.com/jurrel/slickr#Navigating-through-the-website)
+5. [Running website on local machine](https://github.com/jurrel/slickr#Running-website-on-local-machine)
 
 ## Welcome to Slickr
 Slickr is a web application inspired by flickr [https://kindoflikeflickr.herokuapp.com/]
