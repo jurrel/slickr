@@ -1,5 +1,8 @@
 # Table of Contents
-[Welcome to Slickr](https://github.com/jurrel/slickr#Welcome-to-Slickr)
+1. [Welcome to Slickr](https://github.com/jurrel/slickr#Welcome-to-Slickr)
+2. [Technologies](https://github.com/jurrel/slickr#Technologies)
+3. [Relevent Documents](https://github.com/jurrel/slickr#Relevent-Documents)
+4. [Navigating through website](https://github.com/jurrel/slickr#Navigating-through-the-website)
 
 ## Welcome to Slickr
 Slickr is a web application inspired by flickr [https://kindoflikeflickr.herokuapp.com/]
