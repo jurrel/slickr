@@ -1,5 +1,5 @@
 # Table of Contents
-
+[Welcome to Slickr](https://github.com/jurrel/slickr#Welcome-to-Slickr)
 
 ## Welcome to Slickr
 Slickr is a web application inspired by flickr [https://kindoflikeflickr.herokuapp.com/]
@@ -15,7 +15,7 @@ Slickr is a web application inspired by flickr [https://kindoflikeflickr.herokua
 - Pure CSS (no libraries or extensions)
 
 # Relevent Documents
-[Database Schema]
+[Database Schema](https://github.com/jurrel/slickr/wiki/Database-Schema)
 
 # Navigating through the website
 ## Landing Page
