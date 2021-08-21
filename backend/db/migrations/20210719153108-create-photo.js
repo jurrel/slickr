@@ -15,7 +15,6 @@ module.exports = {
       },
       title: {
         allowNull: false,
-        allowNull: true,
         type: Sequelize.TEXT
       },
       caption: {
