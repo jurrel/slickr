@@ -27,11 +27,12 @@ router.post('/:id(\\d+)', requireAuth, asyncHandler(async (req, res) => {
 })); 
 
 //Does not delete 
-router.delete('/:id(\\d+)', requireAuth, asyncHandler(async (req, res) => {
-    const { id } = req.params
-    const deleteComment = await Comment.findByPk(id)
-    await deleteComment.destroy();
-    res.status(204).end()
-})); 
+// router.delete('/:id(\\d+)', requireAuth, asyncHandler(async (req, res) => {
+//     const { id } = req.params
+//     const comment = await Comment.findByPk(id)
+//     await comment.destroy();
+//     res.status(204).end()
+// }))
+
 
 module.exports = router; 

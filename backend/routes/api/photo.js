@@ -47,7 +47,6 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
     const { userId, username, title, imageUrl, caption, albumId } = req.body
     const pictureUpload = await Photo.create({
         userId,
-        username,
         title,
         imageUrl,
         caption,
