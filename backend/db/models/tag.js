@@ -4,7 +4,6 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   Tag.associate = function (models) {
-    // associations can be defined here
     const columnMapping = {
       through: 'ManyTag',
       otherKey: 'photoId',

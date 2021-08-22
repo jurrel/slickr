@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import DemoUser from "../DemoUser";
-import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+
+import * as sessionActions from '../../store/session';
+import DemoUser from "../DemoUser";
 import './LoginForm.css';
 import logInPhotoPage from '../../assets/logInPhotoPage.jpg'
 
 function LoginFormPage() {
-  const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);

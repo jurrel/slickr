@@ -6,8 +6,8 @@
     display: flex;
     justify-content: flex-end;
 }
-.nav-button-slickr:hover {
 
+.nav-button-slickr:hover {
     color: white;
 }
 
@@ -16,8 +16,8 @@
     color: rgba(255, 255, 255, 0.5);
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
     font-weight: 800;
-    /* justify-content: flex-start; */
 }
+
 .navbar-button:hover {
     color: white;
 }
@@ -25,10 +25,12 @@
 .logout-btn{
     color: black;
 }
+
 .logout-btn:hover{
     color: black;
     cursor: pointer;
 }
+
 .navbar-container {
     background-color: #000000;
     color: #212124;

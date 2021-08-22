@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+
 import * as sessionActions from '../../store/session';
 import './Navigation.css';
 
@@ -23,12 +24,15 @@ function Navigation({ isLoaded }) {
         <div>
           <NavLink className='nav-button-slickr' exact to="/homepage">Slickr</NavLink>
         </div>
+
         <div>
           <a className='navbar-button profile-btn' href={`/users/${sessionUser.id}`}> Profile </a>
         </div>
+
         <div>
           <NavLink exact to="/upload"><i className="fa fa-cloud-upload"></i></NavLink>
         </div>
+
         <div>
           <button className='navbar-button logout-btn' onClick={logout}>Log Out</button>
         </div>

@@ -25,19 +25,19 @@ const ProfilePage = () => {
     }
 
     return (
-        <>
-            <div className="title-single-photo-profile-page">MY PHOTOS</div>
-            <div className='photo-layout-profile-page'>
-                {userPhotos?.map((photo) => (
-                    <div>
-                        <a key={photo?.id.id} href={`/photos/${photo.id}`}>
-                            <div className="img-box-profile-page">
-                                <img src={photo.imageUrl} alt="" />
-                            </div>
-                        </a>
-                    </div>
-                ))}
-            </div>
+        <>  
+                <div className="title-single-photo-profile-page">MY PHOTOS</div>
+                <div className='photo-layout-profile-page'>
+                    {userPhotos?.map((photo) => (
+                        <div>
+                            <a key={photo?.id.id} href={`/photos/${photo.id}`}>
+                                <div className="img-box-profile-page">
+                                    <img src={photo.imageUrl} alt="" />
+                                </div>
+                            </a>
+                        </div>
+                    ))}
+                </div>
         </>
     )
 }

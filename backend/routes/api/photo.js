@@ -41,10 +41,9 @@ router.delete('/:id/delete', requireAuth, async (req, res) => {
     res.status(204).end()
 });
 
-
 //Upload/Add photo
 router.post('/', requireAuth, asyncHandler(async (req, res) => {
-    const { userId, username, title, imageUrl, caption, albumId } = req.body
+    const { userId, title, imageUrl, caption, albumId } = req.body
     const pictureUpload = await Photo.create({
         userId,
         title,

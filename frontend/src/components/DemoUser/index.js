@@ -1,7 +1,8 @@
 import React from 'react';
-import { login } from "../../store/session";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
+
+import { login } from "../../store/session";
 import './DemoUser.css';
 
 function DemoUser() {

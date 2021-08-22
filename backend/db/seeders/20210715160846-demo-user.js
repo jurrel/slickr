@@ -90,10 +90,10 @@ module.exports = {
         hashedPassword: "$2a$08$jeMBb7WzYGUG.Z5cpOo/Wu3GVzoU7yJJYbTskEQg0zAdo27yB4lnK",
       },
       { //13
-        email: "Amano@gmail.com",
-        firstName: "Yukiteru",
-        lastName: "Amano",
-        username: "First",
+        email: "Invincible@gmail.com",
+        firstName: "Markus ",
+        lastName: "Grayson",
+        username: "Invincible",
         hashedPassword: "$2a$08$2.XfTsIN4Fl5noscsNSv8uSoTCmBP781kFjV6q33AQV5PfDollWia",
       },
       { //14

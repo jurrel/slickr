@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { getPhotos } from '../../store/photo';
 import { useHistory } from 'react-router-dom';
 import './HomePage.css';

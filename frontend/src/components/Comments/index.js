@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Redirect, useHistory } from "react-router-dom";
+
 import { getComments, createComment } from "../../store/comment";
 import './Comments.css'
 
@@ -9,15 +10,16 @@ import './Comments.css'
 
 export default function Comments() {
     const sessionUser = useSelector(state => state.session.user);
+   
+    //turns the object into an array
+    const comments = useSelector(state => Object.values(state.comment))
     const dispatch = useDispatch();
     const history = useHistory();
     const { photoId } = useParams();
-
+    
     const [comment, setComment] = useState('');
-
-
-    //turns the object into an array
-    const comments = useSelector(state => Object.values(state.comment))
+    
+    
 
     const createANewComment = (e) => setComment(e.target.value)
 

@@ -5,7 +5,6 @@ module.exports = (sequelize, DataTypes) => {
     photoId: DataTypes.INTEGER
   }, {});
   ManyTag.associate = function (models) {
-    // associations can be defined here
   };
   return ManyTag;
 };

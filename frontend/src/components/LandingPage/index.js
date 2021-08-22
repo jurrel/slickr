@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+
 import landingPageImage0 from '../../assets/landingPageImage0.jpg'
 import landingPageImage1 from '../../assets/landingPageImage1.jpg'
 import landingPageImage2 from '../../assets/landingPageImage2.jpg'

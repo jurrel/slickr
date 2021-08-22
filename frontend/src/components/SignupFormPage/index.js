@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 import signupPhotoPage from '../../assets/signupPhotoPage.jpg'
@@ -22,7 +23,7 @@ function SignupFormPage() {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      return dispatch(sessionActions.signup({ firstName, lastName, email, username, password }))  //
+      return dispatch(sessionActions.signup({ firstName, lastName, email, username, password }))  
         .catch(async (res) => {
           const data = await res.json();
           if (data && data.errors) setErrors(data.errors);

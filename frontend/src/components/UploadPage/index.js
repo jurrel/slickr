@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { uploadPhoto } from '../../store/photo'
 import { useHistory } from 'react-router-dom';
+
+import { uploadPhoto } from '../../store/photo'
 import "./UploadPage.css"
 
 
