@@ -3,6 +3,8 @@
    padding: 20px;
    margin: 100px auto;
    display: flex; 
+   display: flex;
+  flex-wrap: wrap;
 }
 
 .img-box-profile-page {
@@ -16,6 +18,8 @@
     display: block;
     width: 100%;
     border-radius: 5px;
+    display: flex;
+
 }
 
 .img-box-profile-page:hover{
@@ -28,4 +32,8 @@
     font-size: 30px;
     display: flex;
     justify-content:center;
+}
+p {
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    margin-left: 10px;
 }

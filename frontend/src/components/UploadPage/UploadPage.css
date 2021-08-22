@@ -1,17 +1,65 @@
-.upload-photo-page-container {
+body{
+    background-color: gray;
+}
+.form-position-upload{
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: gray;
-    padding: 30px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .25);
+    margin-top: 200px ;
 }
-
 .fa-cloud-upload {
     font-size: 45px;
+    color: rgba(255, 255, 255, 0.219);
 }
 .fa-cloud-upload:hover {
     color: white;
     cursor: pointer;
+}
+
+.upload-photo-border {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 65px 40px;
+    border-radius: 3px;
+    /* z-index: 1; */
+}
+
+.submit-btn-upload{
+    padding: auto;
+    position: absolute;
+    left: 875px;
+    bottom: 475px;
+    z-index: 5;
+    background-color: #128FDC;
+    border: 1px solid black;
+    height: 35px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 1px solid black;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+.cancle-btn-upload{
+    padding: auto;
+    position: absolute;
+    left: 990px;
+    bottom: 475px;
+    z-index: 5;
+    background-color: #128FDC;
+    border: 1px solid black;
+    height: 35px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 1px solid black;
+    font-size: 16px;
+    cursor: pointer;
+
 }

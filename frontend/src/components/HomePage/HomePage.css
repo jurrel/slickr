@@ -25,6 +25,7 @@ img {
   box-shadow: 0 0 15px rgba(0, 0 , 0, .2);
   box-sizing: border-box;
   background-size: cover;
+  
 }
 
 .single-photo-home-page:hover{  /*Makes photo pop-up*/
@@ -47,6 +48,7 @@ img {
   font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
   opacity: 0;  
 }  
+
 
 .photo-description-box:hover .photo-description-content {
   font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;

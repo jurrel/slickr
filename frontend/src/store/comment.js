@@ -54,7 +54,6 @@ export const createComment = (comment) => async dispatch => {
 };
 
 
-//Still need a delete and an Edit thunk
 export const updateComment = (comment) => async dispatch => {
     const { id } = comment
     const response = await csrfFetch(`/api/comments/${id}`, {
@@ -68,12 +67,12 @@ export const updateComment = (comment) => async dispatch => {
     }
 }
 
-export const removeComment = (id) => async dispatch => {
-    const response = await csrfFetch(`/api/comments/${id}`, {
+export const removeComment = (comment) => async dispatch => {
+    const response = await csrfFetch(`/api/comments/${comment}`, {
         method: 'DELETE',
     });
     if (response.ok) {
-        dispatch(deleteComment(id))
+        dispatch(deleteComment(comment))
     }
 }
 

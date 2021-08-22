@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Redirect, useHistory } from "react-router-dom";
-import { getComments, createComment, removeComment } from "../../store/comment";
+import { getComments, createComment } from "../../store/comment";
 import './Comments.css'
 
 
@@ -49,34 +49,32 @@ export default function Comments() {
 
     }
 
-    const deleteHelperFunction = async (e) => {
-        e.preventDefault();
-        await dispatch(removeComment(comment.id))
-        history.push(`/photos/${photoId}`);
-    }
+    // const deleteHelperFunction = async (e) => {
+    //     e.preventDefault();
+    //     await dispatch(removeComment(comment.id))
+    //     history.push(`/photos/${photoId}`);
+    // }
 
     return (
         <div>
             <div className='comment-container'>
                 {comments &&
                     comments.map(comment => (
-                        <div key={comment?.id}>
-                            <div className='comment-container2'>{comment.User?.username}:
-                                <div className='trying-space'>
-                                    {comment?.comment}
-                                </div>
+                        <div key={comment?.id} className='comment-container2'>{comment.User?.username}:
+                            <div className='trying-space'>
+                                {comment?.comment}
                             </div>
                         </div>
+
                     ))}
             </div>
             <form className="comment-form" onSubmit={handleSubmit}>
                 <div className="comment-textarea">
                     <textarea placeholder='Add a comment' value={comment} onChange={createANewComment} required></textarea>
-                </div>
-                <div>
-                    <button onClick={handleSubmit}>Post Comment</button>
-                    <button onClick={deleteHelperFunction}>DELETE Comment</button>
-
+                    <div>
+                        <button onClick={handleSubmit}>Post Comment</button>
+                        {/* <button onClick={deleteHelperFunction}>DELETE Comment</button> */}
+                    </div>
                 </div>
             </form>
         </div>

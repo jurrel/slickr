@@ -3,7 +3,6 @@ import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import './Navigation.css';
-import UploadPageModal from '../UploadPhotoModal';
 
 
 function Navigation({ isLoaded }) {
@@ -21,19 +20,25 @@ function Navigation({ isLoaded }) {
   if (sessionUser) {
     sessionLinks = (
       <>
-        <div className='btn-left'>
+        <div>
           <NavLink className='nav-button-slickr' exact to="/homepage">Slickr</NavLink>
         </div>
-        <a className='navbar-button' id='profile-btn' href={`/users/${sessionUser.id}`}> Profile </a>
-        < UploadPageModal />
-        <button className='navbar-button logout-btn'  onClick={logout}>Log Out</button>
+        <div>
+          <a className='navbar-button profile-btn' href={`/users/${sessionUser.id}`}> Profile </a>
+        </div>
+        <div>
+          <NavLink exact to="/upload"><i className="fa fa-cloud-upload"></i></NavLink>
+        </div>
+        <div>
+          <button className='navbar-button logout-btn' onClick={logout}>Log Out</button>
+        </div>
       </>
     );
   } else {
     sessionLinks = (
       <>
-        <NavLink className='navbar-button ' id='logInButton' to="/login">Log In</NavLink>
-        <NavLink className='navbar-button' id='signUpButton' to="/signup">Sign Up</NavLink>
+        <NavLink className='navbar-button ' to="/login">Log In</NavLink>
+        <NavLink className='navbar-button' to="/signup">Sign Up</NavLink>
       </>
     );
   }

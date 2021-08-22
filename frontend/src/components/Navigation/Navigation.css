@@ -1,22 +1,26 @@
 .nav-button-slickr{
     text-decoration: none;
-    color: white;
+    color: rgba(255, 255, 255, 0.5);
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
-    font-weight: 700;
+    font-weight: 800;
+    display: flex;
+    justify-content: flex-end;
 }
+.nav-button-slickr:hover {
+
+    color: white;
+}
+
 .navbar-button {
-    /* take away underline */
     text-decoration: none;
-    color: white;
+    color: rgba(255, 255, 255, 0.5);
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
-    font-weight: 700;
-    display: flex;
-    justify-content: flex-start;
+    font-weight: 800;
+    /* justify-content: flex-start; */
 }
-/* .btn-left {
-    display: flex;
-    justify-content: flex-start;
-} */
+.navbar-button:hover {
+    color: white;
+}
 
 .logout-btn{
     color: black;
@@ -38,3 +42,7 @@
     z-index: 2;
 }
 
+.profile-btn {
+    display:flex;
+    justify-content: left;
+}

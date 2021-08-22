@@ -7,8 +7,7 @@ import './HomePage.css';
 function HomePage() {
     const dispatch = useDispatch();
     const history = useHistory()
-
-
+    
     const showPhoto = (e) => {
         history.push(`/photos/${photo.id}`)
     }
@@ -27,18 +26,17 @@ function HomePage() {
         <div>
             <div className='photo-layout'>
                 {photos?.map((photo) => (
-                    <div class="photo-description-box">
+                    <div key={photo.id} className="photo-description-box">
                         <a href={`/photos/${photo.id}`} onClick={showPhoto}>
-                            <img className='single-photo-home-page' src={photo.imageUrl} alt="photo" />
-                            <div class="photo-description-content">
-                                <p>{photo.title} </p>
-                                <p>{photo.caption}</p>
+                            <img className='single-photo-home-page' src={photo.imageUrl} alt="" />
+                            <div className="photo-description-content">
+                                <p> {photo.title} </p>
                             </div>
                         </a>
                     </div>
                 ))}
             </div>
-            
+
         </div>
     )
 }

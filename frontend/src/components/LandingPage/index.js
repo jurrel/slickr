@@ -55,9 +55,8 @@ export const LandingPage = () => {
             <div>
                 <img className="landing-img" src={backgroundImage} alt="" />
                 <div className="bottom-bar-landing">
-                    {/* <i class="fa fa-github"></i> */}
                     <a className='git-hub-link' href="https://github.com/jurrel/slickr"> 
-                        <i class="fa fa-github"></i>
+                        <i className="fa fa-github"></i>
                     </a>
                 </div>
             </div>

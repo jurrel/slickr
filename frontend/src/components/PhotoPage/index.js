@@ -47,15 +47,15 @@ function PhotoPage() {
     return (
         <>
 
-            <div className='mega-container'>
+            <div className='photo-into-container'>
                 <div className="title-single-photo-page">
                     {photo[photoId]?.title}
                 </div>
-                <img className='single-photo-photo-page' src={photo[photoId]?.imageUrl} alt="picture" />
-                <div>
+                <img className='single-photo-photo-page' src={photo[photoId]?.imageUrl} alt="" />
+                <div className='single-photo-caption'>
                     {photo[photoId]?.caption}
                 </div>
-                <div>
+                <div className='single-photo-username'>
                     By {photo[photoId]?.User?.username}
                 </div>
             </div>

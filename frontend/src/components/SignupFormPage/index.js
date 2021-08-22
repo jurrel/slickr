@@ -36,7 +36,7 @@ function SignupFormPage() {
       <div>
         <img className="landing-img" src={signupPhotoPage} alt="" />
       </div>
-      <div className='form-container'>
+      <div className='form-position-sign-up'>
         <form className="sign-up-border" onSubmit={handleSubmit}>
           <h1>Sign Up for Slickr</h1>
           <ul>
@@ -96,7 +96,7 @@ function SignupFormPage() {
               required
             />
           </div>
-          <button className="submit" type="submit">Sign Up</button>
+          <button className="sign-up-submit-btn" type="submit">Sign Up</button>
         </form>
       </div>
     </>

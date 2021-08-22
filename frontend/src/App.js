@@ -5,12 +5,12 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import HomePage from "./components/HomePage"
 import PhotoPage from "./components/PhotoPage"
-// import UploadPage from "./components/UploadPage";
+import UploadPage from "./components/UploadPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import { LandingPage } from "./components/LandingPage";
 import ProfilePage from "./components/ProfilePage";
-import UploadPageModal from "./components/UploadPhotoModal";
+// import UploadPageModal from "./components/UploadPhotoModal";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,7 +38,7 @@ function App() {
             <PhotoPage />
           </Route>
           <Route path="/upload">
-            <UploadPageModal />
+            <UploadPage />
           </Route>
           <Route path="/homepage">
             <HomePage />

@@ -11,7 +11,9 @@ const UploadPage = () => {
     const history = useHistory();
     const [imageUrl, setImageUrl] = useState('');
     const [caption, setCaption] = useState('');
-    const [title, setTitle] = useState(''); 
+    const [title, setTitle] = useState('');
+
+
 
     const createNewImageUrl = (e) => setImageUrl(e.target.value)
     const createNewCaption = (e) => setCaption(e.target.value)
@@ -24,7 +26,7 @@ const UploadPage = () => {
         const payload = {
             imageUrl,
             caption,
-            title, 
+            title,
             userId: sessionUser.id
         };
 
@@ -38,30 +40,35 @@ const UploadPage = () => {
     const handleCancelClick = (e) => {
         e.preventDefault();
         history.push('/homepage')
-    }; 
- 
+    };
+
     return (
-        <section className="upload-photo-page-container ">
-            <form  className="upload-photo-page-container" onSubmit={handleSubmit}>
-                <input className="input_field" 
-                    type="text"
-                    placeholder="Image URL"
-                    value={imageUrl}
-                    onChange={createNewImageUrl} />
-                <input className="input_field"
-                    type="text"
-                    placeholder="title"
-                    value={title}
-                    onChange={createNewTitle} />
-                <input className="input_field"
-                    type="text"
-                    placeholder="Caption"
-                    value={caption}
-                    onChange={createNewCaption} />
-                <button type="submit">Submit</button>
-                <button type="button" onClick={handleCancelClick}>Cancel</button>
-            </form>
-        </section>
+        <>
+            <div className="form-position-upload">
+                <form onSubmit={handleSubmit}>
+                    <div className="upload-photo-border">
+                        <h1>Upload</h1>
+                        <input className="input_field"
+                            type="text"
+                            placeholder="Image URL"
+                            value={imageUrl}
+                            onChange={createNewImageUrl} />
+                        <input className="input_field"
+                            type="text"
+                            placeholder="Title"
+                            value={title}
+                            onChange={createNewTitle} />
+                        <input className="input_field"
+                            type="text"
+                            placeholder="Caption"
+                            value={caption}
+                            onChange={createNewCaption} />
+                    </div>
+                    <button type="submit" className="submit-btn-upload">Submit</button>
+                    <button type="button" className="cancle-btn-upload" onClick={handleCancelClick}>Cancel</button>
+                </form>
+            </div>
+        </>
     )
 }
 

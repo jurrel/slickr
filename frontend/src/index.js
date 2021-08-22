@@ -7,7 +7,6 @@ import App from './App';
 import configureStore from './store';
 import { restoreCSRF, csrfFetch } from './store/csrf';
 import { editPhoto } from './store/photo';
-import { ModalProvider } from "./context/Modal";
 
 import * as sessionActions from './store/session';
 
@@ -26,11 +25,9 @@ if (process.env.NODE_ENV !== 'production') {
 function Root() {
   return (
     <ReduxProvider store={store}>
-      <ModalProvider>
         <BrowserRouter>
           <App />
         </BrowserRouter>
-      </ModalProvider>
     </ReduxProvider>
   );
 }
