@@ -53,7 +53,6 @@ export const createComment = (comment) => async dispatch => {
     }
 };
 
-
 export const updateComment = (comment) => async dispatch => {
     const { id } = comment
     const response = await csrfFetch(`/api/comments/${id}`, {
@@ -67,12 +66,12 @@ export const updateComment = (comment) => async dispatch => {
     }
 }
 
-export const removeComment = (comment) => async dispatch => {
-    const response = await csrfFetch(`/api/comments/${comment}`, {
+export const deleteAComment = (id) => async dispatch => { 
+    const response = await csrfFetch(`/api/comments/${id}`, {
         method: 'DELETE',
     });
     if (response.ok) {
-        dispatch(deleteComment(comment))
+        dispatch(deleteComment(id))
     }
 }
 

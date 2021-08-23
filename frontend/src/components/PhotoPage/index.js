@@ -10,14 +10,13 @@ import "./PhotoPage.css"
 
 
 function PhotoPage() {
+    const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
     const { photoId } = useParams();
     const photo = useSelector(state => state.photo);
-    const sessionUser = useSelector(state => state.session.user);
 
     const [editImage, setEditImage] = useState(false)
- 
 
     //reloads page everytime photoId changes
     useEffect(() => {

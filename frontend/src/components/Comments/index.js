@@ -10,16 +10,15 @@ import './Comments.css'
 
 export default function Comments() {
     const sessionUser = useSelector(state => state.session.user);
-   
+
     //turns the object into an array
     const comments = useSelector(state => Object.values(state.comment))
     const dispatch = useDispatch();
     const history = useHistory();
     const { photoId } = useParams();
-    
     const [comment, setComment] = useState('');
-    
-    
+
+
 
     const createANewComment = (e) => setComment(e.target.value)
 
@@ -42,7 +41,6 @@ export default function Comments() {
             userId: sessionUser.id,
         }
 
-
         let createNewComment = await dispatch(createComment(payload))
         if (createNewComment) {
             setComment('')
@@ -51,11 +49,13 @@ export default function Comments() {
 
     }
 
-    // const deleteHelperFunction = async (e) => {
+    //Delete button is currently not working
+    // const deleteHelperFunction = (e) => {
     //     e.preventDefault();
-    //     await dispatch(removeComment(comment.id))
-    //     history.push(`/photos/${photoId}`);
+    //     dispatch(deleteAComment(comments?.id))
+    //     // history.push(`/photos/${photoId}`);
     // }
+ 
 
     return (
         <div>
@@ -66,8 +66,11 @@ export default function Comments() {
                             <div className='trying-space'>
                                 {comment?.comment}
                             </div>
+                            {/* Delete button is currently not working */}
+                            {/* {comment?.userId === sessionUser.id ?
+                                <button onClick={deleteHelperFunction}>DELETE Comment</button> : <></>
+                            }       */}
                         </div>
-
                     ))}
             </div>
             <form className="comment-form" onSubmit={handleSubmit}>
@@ -75,7 +78,6 @@ export default function Comments() {
                     <textarea placeholder='Add a comment' value={comment} onChange={createANewComment} required></textarea>
                     <div>
                         <button onClick={handleSubmit}>Post Comment</button>
-                        {/* <button onClick={deleteHelperFunction}>DELETE Comment</button> */}
                     </div>
                 </div>
             </form>

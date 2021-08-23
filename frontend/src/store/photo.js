@@ -81,7 +81,6 @@ export const deleteOnePhoto = (photoId) => async dispatch => {
     const response = await csrfFetch(`/api/photos/${photoId}/delete`, {
         method: "DELETE"
     });
-    console.log('DELETE')
     if (response.ok) {
         dispatch(deleteOne(photoId));
     }
@@ -89,7 +88,6 @@ export const deleteOnePhoto = (photoId) => async dispatch => {
 
 //Edit photo
 export const editPhoto = (payload) => async dispatch => {
-    console.log('WHAT IS PAYLOAD', payload)
     const response = await csrfFetch(`/api/photos/${payload.photoId}`, {
         method: "PUT",
         headers: { 'Content-Type': "application/json" },
