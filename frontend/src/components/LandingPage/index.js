@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import landingPageImage0 from '../../assets/landingPageImage0.jpg'
 import landingPageImage1 from '../../assets/landingPageImage1.jpg'
@@ -47,16 +47,16 @@ export const LandingPage = () => {
 
             <div className='landing-page-header'>Share your adventures {"\n"}
                 <div >Join the Slickr community, where memories are stored</div>
-                <Link className="start-adventure-button" to="/signup">
+                <NavLink className="start-adventure-button" to="/signup">
                     <button className='start-adventure'>
                         Start adventure
                     </button>
-                </Link>
+                </NavLink>
             </div>
             <div>
                 <img className="landing-img" src={backgroundImage} alt="" />
                 <div className="bottom-bar-landing">
-                    <a className='git-hub-link' href="https://github.com/jurrel/slickr"> 
+                    <a className='git-hub-link' href="https://github.com/jurrel/slickr">
                         <i className="fa fa-github"></i>
                     </a>
                 </div>

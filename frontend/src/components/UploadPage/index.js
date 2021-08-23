@@ -64,9 +64,11 @@ const UploadPage = () => {
                             placeholder="Caption"
                             value={caption}
                             onChange={createNewCaption} />
+                    <div>
+                        <button type="submit" className="submit-btn-upload">Submit</button>
+                        <button type="button" className="cancle-btn-upload" onClick={handleCancelClick}>Cancel</button>
                     </div>
-                    <button type="submit" className="submit-btn-upload">Submit</button>
-                    <button type="button" className="cancle-btn-upload" onClick={handleCancelClick}>Cancel</button>
+                    </div>
                 </form>
             </div>
         </>
