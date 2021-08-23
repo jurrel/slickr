@@ -12,10 +12,10 @@ Slickr is a web application inspired by flickr [https://kindoflikeflickr.herokua
 - Express.js
 - Sequelize
 - PostgreSQL
-- React.js
+- React
 - Redux
 - Node.js
-- Pure CSS (no libraries or extensions)
+- CSS
 
 # Relevent Documents
 [Database Schema](https://github.com/jurrel/slickr/wiki/Database-Schema)
