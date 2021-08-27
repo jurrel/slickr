@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Redirect, useHistory } from "react-router-dom";
 
-import { getComments, createComment } from "../../store/comment";
+import { getComments, createComment, deleteAComment } from "../../store/comment";
 import './Comments.css'
 
 
@@ -17,7 +17,6 @@ export default function Comments() {
     const history = useHistory();
     const { photoId } = useParams();
     const [comment, setComment] = useState('');
-
 
 
     const createANewComment = (e) => setComment(e.target.value)
@@ -48,7 +47,12 @@ export default function Comments() {
         }
 
     }
-
+    const deleteHelperFunction = async (commentId) => {
+        let deleteComment = await dispatch(deleteAComment(commentId))
+        if (deleteComment) {
+            history.push(`/photos/${photoId}`)
+        }
+    }
     //Delete button is currently not working
     // const deleteHelperFunction = (e) => {
     //     e.preventDefault();
@@ -66,10 +70,8 @@ export default function Comments() {
                             <div className='trying-space'>
                                 {comment?.comment}
                             </div>
-                            {/* Delete button is currently not working */}
-                            {/* {comment?.userId === sessionUser.id ?
-                                <button onClick={deleteHelperFunction}>DELETE Comment</button> : <></>
-                            }       */}
+                            {comment?.userId === sessionUser.id ?
+                                    <button onClick={() => deleteHelperFunction(comment?.id)}>Delete</button> : <></>}
                         </div>
                     ))}
             </div>
