@@ -1,6 +1,6 @@
 .input_field{
     margin: 5px;
-} 
+}
 .form-container{
     height: 100%;
     width: 100%;
@@ -11,15 +11,16 @@
     margin-top: 200px ;
 }
 .sign-up-border{
-    display: flex;
-    flex-direction: column;
     background-color: white;
-    align-items: center;
-    padding: 65px 40px;
-    border-radius: 3px;
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-51%, -50%);
 }
 
-.login {
+.login,
+.demo-user-button {
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
     color: #fff;
     width: 170px;
@@ -33,4 +34,4 @@
     font-size: 16px;
     cursor: pointer;
     border-radius: 8px;
-  }
+}

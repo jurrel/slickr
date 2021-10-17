@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
+import { useHistory } from "react-router-dom";
+
 import * as sessionActions from '../../store/session';
-import DemoUser from "../DemoUser";
-import './LoginForm.css';
+import { login } from "../../store/session";
 import logInPhotoPage from '../../assets/logInPhotoPage.jpg'
+import './LoginForm.css';
 
 function LoginFormPage() {
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  const history = useHistory();
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
@@ -17,6 +20,19 @@ function LoginFormPage() {
   if (sessionUser) return (
     <Redirect to="/homepage" />
   );
+
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+
+    const DemoUser = {
+        credential: 'DemoUser',
+        password: 'password',
+    };
+
+    await dispatch(login(DemoUser))
+    history.push("/homepage");  //after demo user button is click it automatically goes to home page
+}
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -58,8 +74,9 @@ function LoginFormPage() {
             />
           </div>
           <button className='login' type="login">Log In</button>
+          <button className="demo-user-button" onClick={handleClick} type='button'>Demo</button>
         </form>
-        <DemoUser className='login'></DemoUser> {/*DEmo user no longer works*/}
+          {/* <DemoUser className='demo-user-button'></DemoUser> DEmo user no longer works */}
       </div>
     </>
   );

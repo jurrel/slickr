@@ -32,6 +32,10 @@
     align-items: center;
     padding: 65px 40px;
     border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-51%, -50%);
 }
 
 .sign-up-border h1 {
