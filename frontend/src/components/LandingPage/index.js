@@ -59,6 +59,9 @@ export const LandingPage = () => {
                     <a className='git-hub-link' href="https://github.com/jurrel/slickr">
                         <i className="fa fa-github"></i>
                     </a>
+                    <a className='git-hub-link' href="https://github.com/jurrel/slickr">
+                        <i className="fa fa-linkedin"></i>
+                    </a>
                 </div>
             </div>
         </>
